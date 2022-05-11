@@ -8,6 +8,7 @@ namespace FairWorks.Domain.Entities
 {
     public class PotansiyelFirma:BaseEntitiy
     {
+        public int PotansiyelFirmaId { get; set; }
         public int FirmaId { get; set; }
         public Firma  Firma { get; set; }
         public string Yetkili { get; set; }

@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public enum FirmaTipi
+    public class FirmaTipi:BaseEntitiy
     {
-     Uretici,
-     Ihracatci,
-     Ithalatci,
-     Distributor
+        public int FirmaTipId { get; set; }
+        public string FirmaTip { get; set; }
+       
+
+        public ICollection<FirmaTipveFirma> FirmaTipveFirmalar { get; set; }
+
+
 
     }
 }

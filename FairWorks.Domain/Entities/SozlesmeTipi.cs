@@ -8,6 +8,7 @@ namespace FairWorks.Domain.Entities
 {
     public class SozlesmeTipi:BaseEntitiy
     {
+        public int SozlesmeTipiId { get; set; }
         public string SozlesmeTipleri { get; set; }
         public ICollection<SozlesmeBilgisi> SozlesmeBilgileri { get; set; }
     }

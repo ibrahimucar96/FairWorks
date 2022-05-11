@@ -8,6 +8,7 @@ namespace FairWorks.Domain.Entities
 {
     public class Firma:BaseEntitiy
     {
+        public int FirmaId { get; set; }
         public string FirmaAd { get; set; }       
         public string Adres { get; set; }
         public string Telefon { get; set; }
@@ -20,8 +21,8 @@ namespace FairWorks.Domain.Entities
         public ICollection<GorusulenFirma> GorusulenFirmalar { get; set; }
         public ICollection<PotansiyelFirma> PotansiyelFirmalar { get; set; }
         public ICollection<SozlesmeBilgisi> SozlesmeBilgileri { get; set; }
-        public ICollection<Ziyaretci> Ziyaretciler { get; set; }
-        public ICollection<Distributor> Distributors { get; set; }
+        public ICollection<Ziyaretci> Ziyaretciler { get; set; }    
+        
 
     }
 }

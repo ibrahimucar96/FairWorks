@@ -8,6 +8,7 @@ namespace FairWorks.Domain.Entities
 {
     public class SozlesmeBilgisi:BaseEntitiy
     {
+        public int SozlesmeBilgisiId { get; set; }
         public DateTime SozlesmeTarihi { get; set; }
         public int PersonelId { get; set; }
         public Personel PersonelAdi { get; set; }

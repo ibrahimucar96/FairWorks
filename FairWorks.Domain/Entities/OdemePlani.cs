@@ -8,6 +8,7 @@ namespace FairWorks.Domain.Entities
 {
     public class OdemePlani:BaseEntitiy
     {
+        public int OdemePlaniId { get; set; }
         public decimal VadeSayisi { get; set; }
         public int Taksit { get; set; }
         public decimal Faiz { get; set; }
