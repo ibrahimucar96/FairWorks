@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="EFCore\" />
+    <ProjectReference Include="..\FairWorks.Domain\FairWorks.Domain.csproj" />
   </ItemGroup>
 
 </Project>
