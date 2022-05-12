@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FairWorks.DAL\FairWorks.DAL.csproj" />
     <ProjectReference Include="..\FairWorks.Domain\FairWorks.Domain.csproj" />
   </ItemGroup>
 

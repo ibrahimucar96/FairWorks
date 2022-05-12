@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace FairWorks.BLManager.Abstract
 {
-    public interface IManagerBase<T> where T: class, new()
+    public interface IManagerBase<TEntity> where TEntity: class, new()
     {
-        int Add(T model);
-        int Update(T model);
-        int Delete(T model);
-
-        T Find(int id);
-        List<T> GetAll(Expression<Func<T, bool>> filter);
-        IQueryable<T> GetAllInclude(Expression<Func<T, bool>> filter = null,
-                                   params Expression<Func<T, object>>[] include);
+        void Add(TEntity model);
+        void Update(TEntity model);
+        void Delete(TEntity model);
+        void Delete(int id);
+        TEntity Find(int id);
+        List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter);
+        IQueryable<TEntity> GetAllInclude(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] Include);
 
     }
 }
