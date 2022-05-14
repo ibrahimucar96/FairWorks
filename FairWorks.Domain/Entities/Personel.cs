@@ -11,6 +11,8 @@ namespace FairWorks.Domain.Entities
         public int PersonelId { get; set; }
         public string Ad { get; set; }
         public string SoyAd { get; set; }
+        public string TcNo { get; set; }
+        public string Email { get; set; }
         public string Unvan { get; set; }
         public DateTime? BirthDate { get; set; }
         public string Adres { get; set; }
