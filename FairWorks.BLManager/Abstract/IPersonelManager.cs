@@ -9,5 +9,7 @@ namespace FairWorks.BLManager.Abstract
 {
     public interface IPersonelManager:IManagerBase<Personel>
     {
+        public bool CheckForTcNo(string tcno);
+        public bool CheckForGsm(string gsm);
     }
 }

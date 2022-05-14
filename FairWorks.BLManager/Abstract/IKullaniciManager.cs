@@ -9,5 +9,6 @@ namespace FairWorks.BLManager.Abstract
 {
     public interface IKullaniciManager:IManagerBase<Kullanici>
     {
+        public bool CheckForUserName(string username);
     }
 }

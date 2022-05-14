@@ -9,5 +9,6 @@ namespace FairWorks.BLManager.Abstract
 {
     public interface IStandManager:IManagerBase<Stand>
     {
+        public bool ChechForStandNo(int standno);
     }
 }
