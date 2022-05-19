@@ -8,4 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FairWorks.BLManager\FairWorks.BLManager.csproj" />
+    <ProjectReference Include="..\FairWorks.DAL\FairWorks.DAL.csproj" />
+    <ProjectReference Include="..\FairWorks.Domain\FairWorks.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

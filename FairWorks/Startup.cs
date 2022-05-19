@@ -1,6 +1,11 @@
+using FairWorks.BLManager.Abstract;
+using FairWorks.BLManager.Concrete;
+using FairWorks.Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +32,33 @@ namespace FairWorks
         {
 
             services.AddControllers();
+            //SQL Connection saðlandý
+            services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-Q51EAVI\SQLEXPRESS;Database=FairWorksDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            //Manager services eklendi
+            services.AddScoped<IBiletliZiyaretciManager, BiletliZiyaretciManager>();
+            services.AddScoped<IDavetiyesizZiyaretciManager, DavetiyesizZiyaretciManager>();
+            services.AddScoped<IDovizManager,DovizManager>();
+            services.AddScoped<IFirmaManager, FirmaManager>();
+            services.AddScoped<IFirmaTipiManager, FirmaTipiManager>();
+            services.AddScoped<IFirmaTipveFirmaManager, FirmaTipveFirmaManager>();
+            services.AddScoped<IGorusulenFirmaManager, GorusulenFirmaManager>();
+            services.AddScoped<IIlaveStandMalzemeleriManager, IlaveStandMalzemeleriManager>();
+            services.AddScoped<IKatalogGirisFormManager,KatalogGirisFormManager>();
+            services.AddScoped<IKullaniciManager,KullaniciManager>();
+            services.AddScoped<IOdemePlaniManager, OdemePlaniManager>();
+            services.AddScoped<IPersonelManager, PersonelManager>();
+            services.AddScoped<IPotansiyelFirmaManager,PotansiyelFirmaManager>();
+            services.AddScoped<ISalonManager,SalonManager>();
+            services.AddScoped<ISozlesmeBilgisiManager, SozlesmeBilgisiManager>();
+            services.AddScoped<ISozlesmeTipiManager, SozlesmeTipiManager>();
+            services.AddScoped<IStandManager,StandManager>();
+            services.AddScoped<ITedarikciManager, TedarikciManager>();
+            services.AddScoped<ITeklifBilgisiManager, TeklifBilgisiManager>();
+            services.AddScoped<ITemsilEttigiFirmaManager, TemsilEttigiFirmaManager>();
+            services.AddScoped<IUrunManager, UrunManager>();
+            services.AddScoped<IZiyaretciManager, ZiyaretciManager>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FairWorks", Version = "v1" });
@@ -42,6 +74,8 @@ namespace FairWorks
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FairWorks v1"));
             }
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
