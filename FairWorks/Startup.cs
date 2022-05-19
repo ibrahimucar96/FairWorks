@@ -33,7 +33,7 @@ namespace FairWorks
 
             services.AddControllers();
             //SQL Connection saðlandý
-            services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-Q51EAVI\SQLEXPRESS;Database=FairWorksDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("db")));
             //Manager services eklendi
             services.AddScoped<IBiletliZiyaretciManager, BiletliZiyaretciManager>();
             services.AddScoped<IDavetiyesizZiyaretciManager, DavetiyesizZiyaretciManager>();
