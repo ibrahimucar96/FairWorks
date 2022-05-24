@@ -1,6 +1,6 @@
 using System;
 
-namespace FairWorks
+namespace FairWork
 {
     public class WeatherForecast
     {

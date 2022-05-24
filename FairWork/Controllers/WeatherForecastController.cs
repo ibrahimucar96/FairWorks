@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FairWorks.Controllers
+namespace FairWork.Controllers
 {
     [ApiController]
     [Route("[controller]")]

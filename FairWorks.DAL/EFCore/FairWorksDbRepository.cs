@@ -34,17 +34,17 @@ namespace FairWorks.DAL.EFCore
                 return dbContext.Set<TEntity>().Where(filter).ToList();
             }
         }
-        public void Delete(TEntity entity)
+        public int Delete(TEntity entity)
         {
             dbContext.Set<TEntity>().Remove(entity);
-            dbContext.SaveChanges();
+            return dbContext.SaveChanges();
         }
 
-        public void Delete(int id)
+        public int Delete(int id)
         {
             var entity = dbContext.Set<TEntity>().Find(id);
             dbContext.Set<TEntity>().Remove(entity);
-            dbContext.SaveChanges();
+            return dbContext.SaveChanges();
         }       
 
         public IQueryable<TEntity> GetAllInclude(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] include)
@@ -52,16 +52,16 @@ namespace FairWorks.DAL.EFCore
             var query = dbContext.Set<TEntity>().Where(filter);
             return include.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
         }        
-        public void Insert(TEntity entity)
+        public int Insert(TEntity entity)
         {
            dbContext.Set<TEntity>().Add(entity);
-           dbContext.SaveChanges(); 
+           return dbContext.SaveChanges(); 
         }
 
-        public void Update(TEntity entity)
+        public int Update(TEntity entity)
         {
            dbContext.Set<TEntity>().Update(entity);
-           dbContext.SaveChanges();
+           return dbContext.SaveChanges();
         }
     }
 }

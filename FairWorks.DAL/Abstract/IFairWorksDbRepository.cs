@@ -9,10 +9,10 @@ namespace FairWorks.DAL.Abstract
 {
     public interface IFairWorksDbRepository<TEntity> where TEntity : class,new()
     {
-        public void Insert(TEntity entity);
-        public void Update(TEntity entity);
-        public void Delete(TEntity entity);
-        public void Delete(int id);
+        public int Insert(TEntity entity);
+        public int Update(TEntity entity);
+        public int Delete(TEntity entity);
+        public int Delete(int id);
 
         public TEntity GetById(int id);
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null);

@@ -3,7 +3,6 @@ using FairWorks.BLManager.Concrete;
 using FairWorks.Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FairWorks
+namespace FairWork
 {
     public class Startup
     {
@@ -32,36 +31,35 @@ namespace FairWorks
         {
 
             services.AddControllers();
+            services.AddControllers();
             //SQL Connection saðlandý
             services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("db")));
             //Manager services eklendi
             services.AddScoped<IBiletliZiyaretciManager, BiletliZiyaretciManager>();
             services.AddScoped<IDavetiyesizZiyaretciManager, DavetiyesizZiyaretciManager>();
-            services.AddScoped<IDovizManager,DovizManager>();
+            services.AddScoped<IDovizManager, DovizManager>();
             services.AddScoped<IFirmaManager, FirmaManager>();
             services.AddScoped<IFirmaTipiManager, FirmaTipiManager>();
             services.AddScoped<IFirmaTipveFirmaManager, FirmaTipveFirmaManager>();
             services.AddScoped<IGorusulenFirmaManager, GorusulenFirmaManager>();
             services.AddScoped<IIlaveStandMalzemeleriManager, IlaveStandMalzemeleriManager>();
-            services.AddScoped<IKatalogGirisFormManager,KatalogGirisFormManager>();
-            services.AddScoped<IKullaniciManager,KullaniciManager>();
+            services.AddScoped<IKatalogGirisFormManager, KatalogGirisFormManager>();
+            services.AddScoped<IKullaniciManager, KullaniciManager>();
             services.AddScoped<IOdemePlaniManager, OdemePlaniManager>();
             services.AddScoped<IPersonelManager, PersonelManager>();
-            services.AddScoped<IPotansiyelFirmaManager,PotansiyelFirmaManager>();
-            services.AddScoped<ISalonManager,SalonManager>();
+            services.AddScoped<IPotansiyelFirmaManager, PotansiyelFirmaManager>();
+            services.AddScoped<ISalonManager, SalonManager>();
             services.AddScoped<ISozlesmeBilgisiManager, SozlesmeBilgisiManager>();
             services.AddScoped<ISozlesmeTipiManager, SozlesmeTipiManager>();
-            services.AddScoped<IStandManager,StandManager>();
+            services.AddScoped<IStandManager, StandManager>();
             services.AddScoped<ITedarikciManager, TedarikciManager>();
             services.AddScoped<ITeklifBilgisiManager, TeklifBilgisiManager>();
             services.AddScoped<ITemsilEttigiFirmaManager, TemsilEttigiFirmaManager>();
             services.AddScoped<IUrunManager, UrunManager>();
             services.AddScoped<IZiyaretciManager, ZiyaretciManager>();
-
-
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FairWorks", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FairWork", Version = "v1" });
             });
         }
 
@@ -72,10 +70,8 @@ namespace FairWorks
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FairWorks v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FairWork v1"));
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 

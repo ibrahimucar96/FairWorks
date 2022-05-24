@@ -18,19 +18,19 @@ namespace FairWorks.BLManager.Concrete
             db = new FairWorksDbRepository<TEntity>();
         }
 
-        public void Add(TEntity model)
+        public int Add(TEntity model)
         {
-            db.Insert(model);
+           return db.Insert(model);
         }
 
-        public void Delete(TEntity model)
+        public int Delete(TEntity model)
         {
-            db.Delete(model);
+           return db.Delete(model);
         }
 
-        public void Delete(int id)
+        public int Delete(int id)
         {
-            db.Delete(id);
+           return db.Delete(id);
         }
 
         public TEntity Find(int id)
@@ -48,9 +48,9 @@ namespace FairWorks.BLManager.Concrete
             return db.GetAllInclude(filter, Include);
         }
 
-        public void Update(TEntity model)
+        public int Update(TEntity model)
         {
-            db.Update(model);
+           return db.Update(model);
         }
     }
 }
