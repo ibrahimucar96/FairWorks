@@ -2,6 +2,7 @@
 using FairWorks.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace FairWorks.Controllers
 {
@@ -29,10 +30,27 @@ namespace FairWorks.Controllers
             BiletliZiyaretci biletliziyaretci = new BiletliZiyaretci();
             biletliziyaretci.Ad = Ad;
             biletliziyaretci.SoyAd = Soyad;
-            biletliziyaretci.FirmaId = firma;           
+            biletliziyaretci.FirmaId = firma;  
             biletliziyaretci.Meslek = Meslek;
-            if (manager.Add(biletliziyaretci) > 0)
+            if (biletliziyaretci != null)
+            {
+                if (manager.Add(biletliziyaretci) > 0)
+                    return Ok();
+                else
+                    return BadRequest();
+            }
+            else
+                return BadRequest();
+            
+        }
+        [HttpDelete]
+        public IActionResult DeleteAction(BiletliZiyaretci biletliziyaretci)
+        {
+            if (biletliziyaretci != null)
+            {
+                manager.Delete(biletliziyaretci);
                 return Ok();
+            }
             else
                 return BadRequest();
         }
