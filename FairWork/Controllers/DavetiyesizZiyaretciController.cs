@@ -28,7 +28,7 @@ namespace FairWorks.Controllers
             DavetiyesizZiyaretci davetiyesizZiyaretci = new DavetiyesizZiyaretci();
             davetiyesizZiyaretci.Ad = Ad;
             davetiyesizZiyaretci.SoyAd = Soyad;
-            davetiyesizZiyaretci.Firma = firma;
+            //davetiyesizZiyaretci.Firma = firma;
             davetiyesizZiyaretci.Meslek=Meslek;
             if (davetiyesizZiyaretci != null)
             {

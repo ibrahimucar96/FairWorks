@@ -34,7 +34,7 @@ namespace FairWorks.Controllers
             BiletliZiyaretci biletliziyaretci = new BiletliZiyaretci();
             biletliziyaretci.Ad = Ad;
             biletliziyaretci.SoyAd = Soyad;
-            biletliziyaretci.FirmaId = firma;  
+            //biletliziyaretci.FirmaId = firma;  
             biletliziyaretci.Meslek = Meslek;
             if (biletliziyaretci != null)
             {

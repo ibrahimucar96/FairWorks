@@ -25,7 +25,7 @@ namespace FairWorks.Domain.Entities
         public byte[] Fotograf { get; set; }
         public string Notlar { get; set; }
         public string RaporVerdigiKisi { get; set; }
-        public string? PhotoPath { get; set; }
+        public string PhotoPath { get; set; }
         public decimal Maas { get; set; }
         public ICollection<GorusulenFirma> GorusulenFirmalar { get; set; }
         public ICollection<SozlesmeBilgisi> SozlesmeBilgileri { get; set; }

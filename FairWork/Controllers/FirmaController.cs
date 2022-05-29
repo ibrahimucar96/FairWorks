@@ -26,7 +26,7 @@ namespace FairWorks.Controllers
         public IActionResult PostAction(int firmaid, string firmaAd, string adres, string telefon, string eposta, string faks, string ulke, string sehir)
         {
             Firma firma = new Firma();
-            firma.FirmaId= firmaid;
+            //firma.FirmaId= firmaid;
             firma.FirmaAd= firmaAd;
             firma.Adres= adres;
             firma.Telefon= telefon;
