@@ -61,6 +61,7 @@ namespace FairWork
             services.AddScoped<ITemsilEttigiFirmaManager, TemsilEttigiFirmaManager>();
             services.AddScoped<IUrunManager, UrunManager>();
             services.AddScoped<IZiyaretciManager, ZiyaretciManager>();
+            services.AddScoped<IFirmaBilgiManager, FirmaBilgiManager>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FairWork", Version = "v1" });
