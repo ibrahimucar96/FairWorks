@@ -14,7 +14,7 @@ namespace FairWorks.Domain.Entities
        
 
 
-        public ICollection<FirmaTipveFirma> TemsilEttigiFirmalar { get; set; }
+        public ICollection<FirmaTipveTemsilEdilenFirma> TemsilEttigiFirmalar { get; set; }
 
 
 

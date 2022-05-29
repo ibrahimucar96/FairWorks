@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FairWorks.BLManager.Abstract
 {
-    public interface IFirmaTipveFirmaManager:IManagerBase<FirmaTipveFirma>
+    public interface IFirmaTipveFirmaManager:IManagerBase<FirmaTipveTemsilEdilenFirma>
     {
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FairWorks.BLManager.Concrete
 {
-    public class FirmaTipveFirmaManager:ManagerBase<FirmaTipveFirma>,IFirmaTipveFirmaManager
+    public class FirmaTipveFirmaManager:ManagerBase<FirmaTipveTemsilEdilenFirma>,IFirmaTipveFirmaManager
     {
     }
 }

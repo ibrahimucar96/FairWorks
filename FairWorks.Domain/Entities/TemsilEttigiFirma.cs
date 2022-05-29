@@ -16,7 +16,7 @@ namespace FairWorks.Domain.Entities
         public string IletisimBilgileri { get; set; }
        
 
-        public ICollection<FirmaTipveFirma> FirmaTipi { get; set; }
+        public ICollection<FirmaTipveTemsilEdilenFirma> FirmaTipi { get; set; }
 
     }
 }

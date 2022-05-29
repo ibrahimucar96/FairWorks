@@ -14,7 +14,7 @@ namespace FairWorks.Domain.Entities
         public DbSet<Doviz> Dovizler { get; set; }
         public DbSet<Firma> Firmalar { get; set; }
         public DbSet<FirmaTipi> FirmaTipleri { get; set; }
-        public DbSet<FirmaTipveFirma> FirmaTipiveFirmalar { get; set; }
+        public DbSet<FirmaTipveTemsilEdilenFirma> FirmaTipiveFirmalar { get; set; }
         public DbSet<GorusulenFirma> GorusulenFirmalar { get; set; }
         public DbSet<IlaveStandMalzemeler> İlaveStandMalzemeleri { get; set; }
         public DbSet<KatalogGirisForm> KatalogGirisFormlari { get; set; }
@@ -52,9 +52,9 @@ namespace FairWorks.Domain.Entities
         {
             #region FirmaTipveFirma
             //TemsilEttigiFirma ve FirmaTipi arasında çoka çok ilişki yapıldı
-            modelBuilder.Entity<FirmaTipveFirma>().HasKey(x => new { x.TemsilEttigiFirmaId, x.FirmaTipId });
-            modelBuilder.Entity<FirmaTipveFirma>().HasOne(x => x.FirmaTipi).WithMany(x => x.TemsilEttigiFirmalar).HasForeignKey(x => x.TemsilEttigiFirmaId);
-            modelBuilder.Entity<FirmaTipveFirma>().HasOne(x => x.TemsilEttigiFirma).WithMany(x => x.FirmaTipi).HasForeignKey(x => x.FirmaTipId);
+            modelBuilder.Entity<FirmaTipveTemsilEdilenFirma>().HasKey(x => new { x.TemsilEttigiFirmaId, x.FirmaTipId });
+            modelBuilder.Entity<FirmaTipveTemsilEdilenFirma>().HasOne(x => x.FirmaTipi).WithMany(x => x.TemsilEttigiFirmalar).HasForeignKey(x => x.TemsilEttigiFirmaId);
+            modelBuilder.Entity<FirmaTipveTemsilEdilenFirma>().HasOne(x => x.TemsilEttigiFirma).WithMany(x => x.FirmaTipi).HasForeignKey(x => x.FirmaTipId);
             #endregion
             #region Kullanici
             modelBuilder.Entity<Kullanici>()

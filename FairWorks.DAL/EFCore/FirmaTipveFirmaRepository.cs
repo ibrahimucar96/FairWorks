@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FairWorks.DAL.EFCore
 {
-    public class FirmaTipveFirmaRepository:FairWorksDbRepository<FirmaTipveFirma>, IFirmaTipveFirmaRepository
+    public class FirmaTipveFirmaRepository:FairWorksDbRepository<FirmaTipveTemsilEdilenFirma>, IFirmaTipveFirmaRepository
     {
     }
 }
