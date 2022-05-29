@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class Firma:BaseEntitiy
+    public class Firma
     {
-        public int FirmaId { get; set; }
+        public int Id { get; set; }
+       
         public string FirmaAd { get; set; }       
         public string Adres { get; set; }
         public string Telefon { get; set; }
@@ -16,10 +17,10 @@ namespace FairWorks.Domain.Entities
         public string Faks { get; set; }
         public string Sehir { get; set; }
         public string Ulke { get; set; }
-        public ICollection<BiletliZiyaretci> BiletliZiyaretciler { get; set; }
+        
         public ICollection<DavetiyesizZiyaretci> DavetiyesizZiyaretciler { get; set; }
         public ICollection<GorusulenFirma> GorusulenFirmalar { get; set; }
-        public ICollection<PotansiyelFirma> PotansiyelFirmalar { get; set; }
+        
         public ICollection<SozlesmeBilgisi> SozlesmeBilgileri { get; set; }
         public ICollection<Ziyaretci> Ziyaretciler { get; set; }    
         

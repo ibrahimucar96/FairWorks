@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class DavetiyesizZiyaretci:BaseEntitiy
+    public class DavetiyesizZiyaretci
     {
+        public int Id { get; set; }
         public string Ad { get; set; }
         public string SoyAd { get; set; }
         public int FirmaId { get; set; }

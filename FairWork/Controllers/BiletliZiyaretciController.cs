@@ -23,6 +23,10 @@ namespace FairWorks.Controllers
             var biletliziyaretci = manager.GetAll(null);
             var jsonobject = new JsonResult(biletliziyaretci);
             return jsonobject;
+
+            
+
+
         }
         [HttpPost]
         public IActionResult PostAction(string Ad,string Soyad,int firma,string Meslek)

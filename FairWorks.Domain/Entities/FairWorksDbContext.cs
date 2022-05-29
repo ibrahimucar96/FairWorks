@@ -31,6 +31,7 @@ namespace FairWorks.Domain.Entities
         public DbSet<TemsilEttigiFirma> TemsilEttigiFirmalar { get; set; }
         public DbSet<Urun> Urunler { get; set; }
         public DbSet<Ziyaretci> Ziyaretciler { get; set; }
+        public DbSet<FirmaBilgi> FirmaBilgileri { get; set; }
 
 
         public FairWorksDbContext()
@@ -49,9 +50,12 @@ namespace FairWorks.Domain.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region FirmaTipveFirma
             //TemsilEttigiFirma ve FirmaTipi arasında çoka çok ilişki yapıldı
             modelBuilder.Entity<FirmaTipveFirma>().HasKey(x => new { x.TemsilEttigiFirmaId, x.FirmaTipId });
-
+            modelBuilder.Entity<FirmaTipveFirma>().HasOne(x => x.FirmaTipi).WithMany(x => x.TemsilEttigiFirmalar).HasForeignKey(x => x.TemsilEttigiFirmaId);
+            modelBuilder.Entity<FirmaTipveFirma>().HasOne(x => x.TemsilEttigiFirma).WithMany(x => x.FirmaTipi).HasForeignKey(x => x.FirmaTipId);
+            #endregion
             #region Kullanici
             modelBuilder.Entity<Kullanici>()
                 .Property(x => x.UserName)
@@ -69,6 +73,7 @@ namespace FairWorks.Domain.Entities
                 .HasMaxLength(20)
                 .HasDefaultValue<string>("user");
             #endregion
+
         }
     }
 }

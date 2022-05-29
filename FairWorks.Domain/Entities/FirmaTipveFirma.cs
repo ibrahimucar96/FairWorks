@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class FirmaTipveFirma:BaseEntitiy
+    public class FirmaTipveFirma
     {
         [ForeignKey("TemsilEttigiFirma")]
         public int TemsilEttigiFirmaId { get; set; }

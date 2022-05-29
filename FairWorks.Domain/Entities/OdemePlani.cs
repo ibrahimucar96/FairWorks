@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class OdemePlani:BaseEntitiy
+    public class OdemePlani
     {
-        public int OdemePlaniId { get; set; }
+        public int Id { get; set; }
+
+       
         public decimal VadeSayisi { get; set; }
         public int Taksit { get; set; }
         public decimal Faiz { get; set; }

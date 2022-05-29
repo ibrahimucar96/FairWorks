@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class Salon:BaseEntitiy
+    public class Salon
     {
-        public int SalonId { get; set; }
+        public int Id { get; set; }
+
         public string Ulke { get; set; }
         public string Sehir { get; set; }
         public int SalonNo { get; set; }

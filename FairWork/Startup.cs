@@ -30,8 +30,12 @@ namespace FairWork
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
-            services.AddControllers();
+            
+            //Iliþkili kayitlarin EntityFrameWork icerisinde gelebilmesi icin 
+            // Bu ayarin eklenmesi gerekmektedir.
+            // Bundan once Microsoft.ASPNetCore.MVC.NewtonSoftJson paketinin
+            //Kurulu olmasi gerekmektedir
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             //SQL Connection saðlandý
             services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("db")));
             //Manager services eklendi

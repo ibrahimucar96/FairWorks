@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class TemsilEttigiFirma:BaseEntitiy
+    public class TemsilEttigiFirma
     {
-        public int TemsilEttigiFirmaId { get; set; }
+        public int Id { get; set; }
+
         public string TemsilEdilenFirma { get; set; }
         public string Ulke { get; set; }
         public string TemsilEdilenFirmaUrunleri { get; set; }
         public string IletisimBilgileri { get; set; }
-        
-        public ICollection<FirmaTipveFirma> FirmaTipveFirmalar { get; set; }
+       
+
+        public ICollection<FirmaTipveFirma> FirmaTipi { get; set; }
 
     }
 }

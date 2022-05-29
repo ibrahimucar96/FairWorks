@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class FirmaTipi:BaseEntitiy
+    public class FirmaTipi
     {
-        public int FirmaTipId { get; set; }
+        public int Id { get; set; }
+       
         public string FirmaTip { get; set; }
        
 
-        public ICollection<FirmaTipveFirma> FirmaTipveFirmalar { get; set; }
+
+        public ICollection<FirmaTipveFirma> TemsilEttigiFirmalar { get; set; }
 
 
 

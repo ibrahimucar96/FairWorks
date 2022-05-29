@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class KatalogGirisForm:BaseEntitiy
+    public class KatalogGirisForm
     {
-        public int KatalogGirisFormId { get; set; }
+        public int Id { get; set; }
+        public int FirmaId { get; set; }
         public Firma Firma { get; set; }
+        public int UrunId { get; set; }
         public Urun UrunGrupları { get; set; }
+        public int FirmaTipId { get; set; }
         public FirmaTipi FirmaTip { get; set; }
 
     }

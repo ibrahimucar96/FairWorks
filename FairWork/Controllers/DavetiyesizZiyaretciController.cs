@@ -15,6 +15,7 @@ namespace FairWorks.Controllers
         {
             this.manager = manager;
         }
+        [HttpGet]
         public IActionResult GetAction()
         {
             var davetiyesizZiyaretci = manager.GetAll(null);
@@ -27,7 +28,7 @@ namespace FairWorks.Controllers
             DavetiyesizZiyaretci davetiyesizZiyaretci = new DavetiyesizZiyaretci();
             davetiyesizZiyaretci.Ad = Ad;
             davetiyesizZiyaretci.SoyAd = Soyad;
-            davetiyesizZiyaretci.FirmaId = firma;
+            davetiyesizZiyaretci.Firma = firma;
             davetiyesizZiyaretci.Meslek=Meslek;
             if (davetiyesizZiyaretci != null)
             {
@@ -40,16 +41,12 @@ namespace FairWorks.Controllers
                 return BadRequest();
 
         }
+       
         [HttpDelete]
-        public IActionResult DeleteAction(DavetiyesizZiyaretci davetiyesizZiyaretci)
+        public IActionResult DeleteId(int id)
         {
-            if (davetiyesizZiyaretci != null)
-            {
-                manager.Delete(davetiyesizZiyaretci);
-                return Ok();
-            }
-            else
-                return BadRequest();
+            var davetiyesiz= manager.Delete(id);
+            return Ok();
         }
     }
 }

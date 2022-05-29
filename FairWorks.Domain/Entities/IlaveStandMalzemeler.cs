@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace FairWorks.Domain.Entities
 {
-    public class IlaveStandMalzemeler:BaseEntitiy
+    public class IlaveStandMalzemeler
     {
-        public int IlaveStandMalzemeId { get; set; }
+        public int Id { get; set; }
+
+        
         public string IlaveStandMalzemesi { get; set; }
         public int MalzemeKodu { get; set; }
         public string MalzemeleAdı { get; set; }

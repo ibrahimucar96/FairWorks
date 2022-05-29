@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 namespace FairWorks.Domain.Entities
 {
-    public class Urun:BaseEntitiy
+    public class Urun
     {
-        public int UrunId { get; set; }
+        public int Id { get; set; }
+
         public string UrunAdi { get; set; }
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
