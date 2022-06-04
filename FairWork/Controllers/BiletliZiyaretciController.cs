@@ -56,15 +56,7 @@ namespace FairWorks.Controllers
             }
            
             return Ok(biletliziyaretci);    
-            //if (biletliziyaretci != null)
-            //{
-            //    if (manager.Add(biletliziyaretci) > 0)
-            //        return Ok();
-            //    else
-            //        return BadRequest();
-            //}
-            //else
-            //    return BadRequest();
+            
 
         }
        
