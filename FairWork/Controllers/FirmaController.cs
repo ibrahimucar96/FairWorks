@@ -34,15 +34,17 @@ namespace FairWorks.Controllers
             firma.Faks= faks;
             firma.Ulke= ulke;
             firma.Sehir= sehir;
-            if (firma != null)
-            {
-                if (manager.Add(firma) > 0)
-                    return Ok();
-                else
-                    return BadRequest();
-            }
-            else
-                return BadRequest();
+            manager.Add(firma);
+            return Ok(firma);
+            //if (firma != null)
+            //{
+            //    if (manager.Add(firma) > 0)
+            //        return Ok();
+            //    else
+            //        return BadRequest();
+            //}
+            //else
+            //    return BadRequest();
         }
         [HttpDelete]
         public IActionResult DeleteAction(Firma firma)

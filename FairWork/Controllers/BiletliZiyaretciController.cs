@@ -45,13 +45,26 @@ namespace FairWorks.Controllers
             biletliziyaretci.Meslek = Meslek;
             if (biletliziyaretci != null)
             {
-                if (manager.Add(biletliziyaretci) > 0)
-                    return Ok();
-                else
+                if (ModelState.IsValid) 
+                {
                     return BadRequest();
+                }
+                else
+                {
+                    manager.Add(biletliziyaretci);
+                }
             }
-            else
-                return BadRequest();
+           
+            return Ok(biletliziyaretci);    
+            //if (biletliziyaretci != null)
+            //{
+            //    if (manager.Add(biletliziyaretci) > 0)
+            //        return Ok();
+            //    else
+            //        return BadRequest();
+            //}
+            //else
+            //    return BadRequest();
 
         }
        
@@ -73,12 +86,7 @@ namespace FairWorks.Controllers
             manager.Delete(id);
             return Ok();
         }
-        [HttpPut]
-        public IActionResult GetUpdate(BiletliZiyaretci biletziyaretci)
-        {
-            return manager.Update(biletziyaretci);
-            
-        }
+        
         
         [HttpPut]
         public BiletliZiyaretci Update(BiletliZiyaretci biletliziyaretci)
@@ -93,6 +101,7 @@ namespace FairWorks.Controllers
                 updated.Eposta = biletliziyaretci.Eposta;
                 updated.Faks = biletliziyaretci.Faks;
                 updated.Meslek = biletliziyaretci.Meslek;
+            manager.Update(updated);
 
             return updated;
 

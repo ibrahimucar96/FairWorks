@@ -9,10 +9,9 @@ namespace FairWorks.BLManager.Abstract
 {
     public interface IManagerBase<TEntity> where TEntity: class, new()
     {
-        int Add(TEntity model);
-        int Update(TEntity model);
-        int UpdateId(int id);
-        int Delete(TEntity model);
+        void Add(TEntity model);
+        void Update(TEntity model);       
+        void Delete(TEntity model);
         int Delete(int id);
         TEntity Find(int id);
         List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter);
