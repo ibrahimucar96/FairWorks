@@ -11,6 +11,7 @@ namespace FairWorks.BLManager.Abstract
     {
         int Add(TEntity model);
         int Update(TEntity model);
+        int UpdateId(int id);
         int Delete(TEntity model);
         int Delete(int id);
         TEntity Find(int id);

@@ -23,12 +23,15 @@ namespace FairWorks.Controllers
             return jsonobject;
         }
         [HttpPost]
-        public IActionResult PostAction(string Ad, string Soyad, int firma, string Meslek)
+        public IActionResult PostAction(string Ad, string Soyad, string firmaAd,string telefon,string eposta,string faks, string Meslek)
         {
             DavetiyesizZiyaretci davetiyesizZiyaretci = new DavetiyesizZiyaretci();
             davetiyesizZiyaretci.Ad = Ad;
             davetiyesizZiyaretci.SoyAd = Soyad;
-            //davetiyesizZiyaretci.Firma = firma;
+            davetiyesizZiyaretci.FirmaAdı = firmaAd;
+            davetiyesizZiyaretci.Telefon= telefon;
+            davetiyesizZiyaretci.Eposta= eposta;
+            davetiyesizZiyaretci.Faks= faks;
             davetiyesizZiyaretci.Meslek=Meslek;
             if (davetiyesizZiyaretci != null)
             {
@@ -42,7 +45,7 @@ namespace FairWorks.Controllers
 
         }
        
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteId(int id)
         {
             var davetiyesiz= manager.Delete(id);

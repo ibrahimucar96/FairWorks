@@ -21,6 +21,7 @@ namespace FairWorks.BLManager.Concrete
         public int Add(TEntity model)
         {
            return db.Insert(model);
+            
         }
 
         public int Delete(TEntity model)
@@ -51,6 +52,11 @@ namespace FairWorks.BLManager.Concrete
         public int Update(TEntity model)
         {
            return db.Update(model);
+        }
+
+        public int UpdateId(int id)
+        {
+            return db.Update(Find(id));
         }
     }
 }

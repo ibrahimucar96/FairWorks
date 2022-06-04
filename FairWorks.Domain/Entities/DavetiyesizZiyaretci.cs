@@ -11,8 +11,10 @@ namespace FairWorks.Domain.Entities
         public int Id { get; set; }
         public string Ad { get; set; }
         public string SoyAd { get; set; }
-        public int FirmaId { get; set; }
-        public Firma Firma { get; set; }             
+        public string FirmaAdı { get; set; }
+        public string Telefon { get; set; }
+        public string Eposta { get; set; }
+        public string Faks { get; set; }
         public string Meslek { get; set; }
 
     }

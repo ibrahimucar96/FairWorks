@@ -4,14 +4,16 @@ using FairWorks.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FairWorks.Domain.Migrations
 {
     [DbContext(typeof(FairWorksDbContext))]
-    partial class FairWorksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220604093105_düzeltmeDavetiyesizZiyaretci")]
+    partial class düzeltmeDavetiyesizZiyaretci
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
