@@ -33,20 +33,21 @@ namespace FairWorks.Controllers
             davetiyesizZiyaretci.Eposta= eposta;
             davetiyesizZiyaretci.Faks= faks;
             davetiyesizZiyaretci.Meslek=Meslek;
-            manager.Add(davetiyesizZiyaretci);
+
+           manager.Add(davetiyesizZiyaretci);
+            
+
             return Ok(davetiyesizZiyaretci);
-            //if (davetiyesizZiyaretci != null)
-            //{
-            //    if (manager.Add(davetiyesizZiyaretci) > 0)
-            //        return Ok();
-            //    else
-            //        return BadRequest();
-            //}
-            //else
-            //    return BadRequest();
+            
+            
 
         }
-       
+        [HttpGet("{id}")]
+        public DavetiyesizZiyaretci Get(int id)
+        {
+            return manager.Find(id);
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteId(int id)
         {

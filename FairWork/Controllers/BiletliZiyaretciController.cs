@@ -43,34 +43,13 @@ namespace FairWorks.Controllers
             biletliziyaretci.Eposta = eposta;
             biletliziyaretci.Faks = faks;
             biletliziyaretci.Meslek = Meslek;
-            if (biletliziyaretci != null)
-            {
-                if (ModelState.IsValid) 
-                {
-                    return BadRequest();
-                }
-                else
-                {
-                    manager.Add(biletliziyaretci);
-                }
-            }
-           
-            return Ok(biletliziyaretci);    
-            
+            manager.Add(biletliziyaretci);
+
+            return Ok(biletliziyaretci);
 
         }
-       
-        [HttpDelete]
-        public IActionResult DeleteAction(BiletliZiyaretci biletliziyaretci)
-        {
-            if (biletliziyaretci != null)
-            {
-                manager.Delete(biletliziyaretci);
-                return Ok();
-            }
-            else
-                return BadRequest();
-        }
+
+
         [HttpDelete("{id}")]
         public IActionResult DeleteIdAction(int id)
         {

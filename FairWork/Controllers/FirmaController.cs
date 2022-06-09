@@ -22,11 +22,16 @@ namespace FairWorks.Controllers
             var jsonobject = new JsonResult(firma);
             return jsonobject;
         }
+        [HttpGet("{id}")]
+        public Firma Get(int id)
+        {
+            return manager.Find(id);
+        }
         [HttpPost]
-        public IActionResult PostAction(int firmaid, string firmaAd, string adres, string telefon, string eposta, string faks, string ulke, string sehir)
+        public IActionResult PostAction( string firmaAd, string adres, string telefon, string eposta, string faks, string ulke, string sehir)
         {
             Firma firma = new Firma();
-            //firma.FirmaId= firmaid;
+            
             firma.FirmaAd= firmaAd;
             firma.Adres= adres;
             firma.Telefon= telefon;
@@ -36,26 +41,28 @@ namespace FairWorks.Controllers
             firma.Sehir= sehir;
             manager.Add(firma);
             return Ok(firma);
-            //if (firma != null)
-            //{
-            //    if (manager.Add(firma) > 0)
-            //        return Ok();
-            //    else
-            //        return BadRequest();
-            //}
-            //else
-            //    return BadRequest();
         }
-        [HttpDelete]
-        public IActionResult DeleteAction(Firma firma)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteIdAction(int id)
         {
-            if (firma != null)
-            {
-                manager.Delete(firma);
-                return Ok();
-            }
-            else
-                return BadRequest();
+
+            manager.Delete(id);
+            return Ok();
+        }
+        [HttpPut]
+        public Firma Update(Firma firma)
+        {
+            Firma updated = manager.Find(firma.Id);
+            updated.FirmaAd = firma.FirmaAd;
+            updated.Adres= firma.Adres;
+            updated.Telefon= firma.Telefon;
+            updated.Eposta= firma.Eposta;
+            updated.Faks= firma.Faks;
+            updated.Ulke= firma.Ulke;
+            updated.Sehir= firma.Sehir;
+            manager.Update(updated);
+
+            return updated;
         }
     }
 }
