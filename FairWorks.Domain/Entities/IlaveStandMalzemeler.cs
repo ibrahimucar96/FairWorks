@@ -17,7 +17,8 @@ namespace FairWorks.Domain.Entities
         public string ElektrikKw { get; set; }
         public decimal Fiyat { get; set; }
         public string Ozellik { get; set; }
-        public ICollection<Tedarikci> Tedarikciler { get; set; }
+        public int TedarikciId { get; set; }
+        public Tedarikci Tedarikciler { get; set; }
 
     }
 }

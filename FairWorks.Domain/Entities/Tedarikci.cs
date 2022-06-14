@@ -12,7 +12,7 @@ namespace FairWorks.Domain.Entities
 
         public string Tedarikciler { get; set; }
 
-        public IlaveStandMalzemeler İlaveStandMalzemeleri { get; set; }
+        public ICollection<IlaveStandMalzemeler> IlaveStandMalzemeleri { get; set; }
 
     }
 }

@@ -49,7 +49,7 @@ namespace FairWorks.DAL.EFCore
 
         public IQueryable<TEntity> GetAllInclude(Expression<Func<TEntity, bool>> filter = null, params Expression<Func<TEntity, object>>[] include)
         {
-            var query = dbContext.Set<TEntity>().Where(filter);
+                var query = dbContext.Set<TEntity>().Where(filter);
             return include.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
         }        
         public void Insert(TEntity entity)
