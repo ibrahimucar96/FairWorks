@@ -38,6 +38,7 @@ namespace FairWork
             services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             //SQL Connection saðlandý
             services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("db")));
+            services.AddAutoMapper(typeof(Startup));
             //Manager services eklendi
             services.AddScoped<IBiletliZiyaretciManager, BiletliZiyaretciManager>();
             services.AddScoped<IDavetiyesizZiyaretciManager, DavetiyesizZiyaretciManager>();
