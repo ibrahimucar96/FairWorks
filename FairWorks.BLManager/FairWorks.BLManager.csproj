@@ -9,8 +9,4 @@
     <ProjectReference Include="..\FairWorks.Domain\FairWorks.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ValidationRules\" />
-  </ItemGroup>
-
 </Project>
