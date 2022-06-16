@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BiletliZiyaretci>
+
+
+<h3>Biletli Ziyaretci Sayfasi</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model=>model.Id)</td>
+            <td>@Html.DisplayNameFor(model=>model.Ad)</td>
+            <td>@Html.DisplayNameFor(model=>model.SoyAd)</td>
+            <td>@Html.DisplayNameFor(model=>model.FirmaAdı)</td>
+            <td>@Html.DisplayNameFor(model=>model.Adres)</td>
+            <td>@Html.DisplayNameFor(model=>model.Telefon)</td>
+            <td>@Html.DisplayNameFor(model=>model.Eposta)</td>
+            <td>@Html.DisplayNameFor(model=>model.Faks)</td>
+            <td>@Html.DisplayNameFor(model=>model.Meslek)</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Ad</td>
+                <td>@item.SoyAd</td>
+                <td>@item.FirmaAdı</td>
+                <td>@item.Adres</td>
+                <td>@item.Telefon</td>
+                <td>@item.Eposta</td>
+                <td>@item.Faks</td>
+                <td>@item.Meslek</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
