@@ -47,7 +47,7 @@ namespace FairWorks.WebUI
             services.AddScoped<ISozlesmeBilgisiManager,SozlesmeBilgisiManager>();
             services.AddScoped<ISozlesmeTipiManager,SozlesmeTipiManager>();
             services.AddScoped<IStandManager,StandManager>();
-            services.AddScoped<ITedarikciManager,ITedarikciManager>();
+            services.AddScoped<ITedarikciManager,TedarikciManager>();
             services.AddScoped<ITeklifBilgisiManager,TeklifBilgisiManager>();
             services.AddScoped<ITemsilEttigiFirmaManager,TemsilEttigiFirmaManager>();
             services.AddScoped<IUrunManager,UrunManager>();

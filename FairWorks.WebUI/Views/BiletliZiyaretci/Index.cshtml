@@ -3,6 +3,13 @@
 
 <h3>Biletli Ziyaretci Sayfasi</h3>
 
+<p>
+    <a class="btn btn-success" asp-controller="BiletliZiyaretci" asp-action="Create">Yeni</a>
+</p>
+
+
+
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -15,6 +22,7 @@
             <td>@Html.DisplayNameFor(model=>model.Eposta)</td>
             <td>@Html.DisplayNameFor(model=>model.Faks)</td>
             <td>@Html.DisplayNameFor(model=>model.Meslek)</td>
+            <td>Islem</td>
 
         </tr>
     </thead>
@@ -31,8 +39,36 @@
                 <td>@item.Eposta</td>
                 <td>@item.Faks</td>
                 <td>@item.Meslek</td>
+                <td><a asp-controller="BiletliZiyaretci" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                <a asp-controller="BiletliZiyaretci" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
             </tr>
         }
 
     </tbody>
 </table>
+@*ViewBagKullanimi*@
+@*<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>UrunAdi</td>
+            <td>Adet</td>
+            <td>Fiyat</td>
+            <td>UrunKodu</td>
+            <td>UrunBilgileri</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Urunler)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UrunAdi</td>
+                <td>@item.Adet</td>
+                <td>@item.Fiyat</td>
+                <td>@item.UrunKodu</td>
+                <td>@item.UrunBilgileri</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
