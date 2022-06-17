@@ -4,9 +4,11 @@ using FairWorks.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using FairWorks.WebUI.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FairWorks.WebUI.Controllers
 {
+    [Authorize(Roles = "Employee,Admin")]
     public class BiletliZiyaretciController : Controller
     {
         private readonly IBiletliZiyaretciManager manager;

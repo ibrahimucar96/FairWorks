@@ -1,8 +1,10 @@
 ﻿using FairWorks.BLManager.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FairWorks.WebUI.Controllers
 {
+    [Authorize(Roles = "Employee,Admin")]
     public class DavetiyesizZiyaretciController : Controller
     {
         private readonly IDavetiyesizZiyaretciManager manager;

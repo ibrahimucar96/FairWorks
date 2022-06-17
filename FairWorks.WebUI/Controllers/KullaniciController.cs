@@ -2,6 +2,7 @@
 using FairWorks.WebUI.Models.Dto;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace FairWorks.WebUI.Controllers
 {
+    
     public class KullaniciController : Controller
     {
         private readonly IKullaniciManager manager;
@@ -51,7 +53,7 @@ namespace FairWorks.WebUI.Controllers
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme
                                         , new ClaimsPrincipal(claimIdentity));
 
-                return RedirectToAction("Index", "Home", new { area = "Admin" });
+                return RedirectToAction("Index", "Home");
 
 
             }
@@ -59,6 +61,10 @@ namespace FairWorks.WebUI.Controllers
             {
                 return View();
             }
+        }
+        public IActionResult YetkiHatasi()
+        {
+            return View();
         }
     }
 }

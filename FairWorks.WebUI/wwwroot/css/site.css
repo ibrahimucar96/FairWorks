@@ -144,3 +144,15 @@ form .error {
 #second {
     display: none;
 }
+
+/*YETKİ HATASI*/
+
+
+h1 {
+    color: red;
+}
+
+h6 {
+    color: red;
+    text-decoration: underline;
+}
