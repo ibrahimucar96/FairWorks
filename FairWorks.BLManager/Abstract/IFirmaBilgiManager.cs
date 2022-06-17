@@ -9,5 +9,6 @@ namespace FairWorks.BLManager.Abstract
 {
     public interface IFirmaBilgiManager:IManagerBase<FirmaBilgi>
     {
+        public bool CheckForVergiNo(string vergiNo);
     }
 }

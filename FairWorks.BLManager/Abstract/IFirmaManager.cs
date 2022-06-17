@@ -9,5 +9,6 @@ namespace FairWorks.BLManager.Abstract
 {
     public interface IFirmaManager:IManagerBase<Firma>
     {
+        public bool CheckForFirmaAdi(string firmaAdi);
     }
 }
