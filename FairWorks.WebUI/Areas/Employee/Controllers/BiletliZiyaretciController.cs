@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using FairWorks.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace FairWorks.WebUI.Controllers
+namespace FairWorks.WebUI.Areas.Employee.Controllers
 {
-    [Authorize(Roles = "Employee,Admin")]
+    [Area("Employee")]
     public class BiletliZiyaretciController : Controller
     {
         private readonly IBiletliZiyaretciManager manager;
@@ -28,7 +28,7 @@ namespace FairWorks.WebUI.Controllers
         public IActionResult Create()
         {
             BiletliZiyaretci entity = new BiletliZiyaretci();
-            
+
 
             return View(entity);
         }
@@ -38,8 +38,8 @@ namespace FairWorks.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 manager.Add(bz);
-                return RedirectToAction("Index","BiletliZiyaretci");
-                
+                return RedirectToAction("Index", "BiletliZiyaretci");
+
             }
             return View();
         }
