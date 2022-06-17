@@ -1,6 +1,7 @@
 using FairWorks.BLManager.Abstract;
 using FairWorks.BLManager.Concrete;
 using FairWorks.Domain.Entities;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -53,6 +54,19 @@ namespace FairWorks.WebUI
             services.AddScoped<IUrunManager,UrunManager>();
             services.AddScoped<IZiyaretciManager,ZiyaretciManager>();
 
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x =>
+                {
+                    x.LoginPath = "/Kullanici/Giris";
+                    x.LogoutPath = "/Kullanici/Cikis";
+                    x.AccessDeniedPath = "/Kullanici/YetkiHatasi";
+                    x.Cookie.HttpOnly = true;
+                    x.Cookie.Name = "FairWorks";
+                    x.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict;
+                    x.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.SameAsRequest;
+                    x.ExpireTimeSpan = TimeSpan.FromMinutes(10); // Cookie'nin ömrünü belirler.
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
