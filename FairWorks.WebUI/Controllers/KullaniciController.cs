@@ -52,8 +52,10 @@ namespace FairWorks.WebUI.Controllers
                 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme
                                         , new ClaimsPrincipal(claimIdentity));
-
-                return RedirectToAction("Index", "Home", new { area = "Admin"});
+                if (user.Role == "Admin")
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
+                else
+                    return RedirectToAction("Index", "Home");
 
 
             }
