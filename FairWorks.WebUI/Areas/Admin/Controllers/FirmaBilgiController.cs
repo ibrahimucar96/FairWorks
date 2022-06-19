@@ -30,44 +30,65 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            var firmaBilgi = manager.GetAll(null);
-            return View(firmaBilgi);
+            List<FirmaBilgi> firmaBilgi = new List<FirmaBilgi>();
+            firmaBilgi = manager.GetAll(null);
             
-            
+
+            if (firmaBilgi.Count == 0)
+                firmaBilgi.Add(new FirmaBilgi());
+
+            return View(firmaBilgi);                           
         }
         [HttpGet]
         public IActionResult Create()
         {
-            FirmaBilgiCreateDto createDto = new FirmaBilgiCreateDto();
+            var firmabilgi = new FirmaBilgiCreateDto();
+            var alanlar = ucretsizVerilenAlan.GetAll(null);
+            List<UcretsizVerilenAlanModel> alanSelectList = new();
+            foreach (var item in alanlar)
+            {
+                alanSelectList.Add(new UcretsizVerilenAlanModel { UcretsizVerilenAlanId=item.UcretsizVerilenAlanId,UcretsizVerilenm2 = item.UcretsizVerilenm2 });
+            }
+            ViewBag.Alanlar = new SelectList(alanSelectList, "UcretsizVerilenAlanId", "UcretsizVerilenm2");
+            return View(firmabilgi);
 
-            createDto.FirmaBilgiDto = new FirmaBilgiDto();
 
-            var ucretsiz = ucretsizVerilenAlan.GetAll(null);
-            var alan = mapper.Map<List<UcretsizVerilenAlan>, List<UcretsizVerilenAlanModel>>(ucretsiz);
-            createDto.UcretsizVerilenAlan = new SelectList(alan, "UcretsizVerilenAlanId", "UcretsizVerilenm2");
-
-            return View(createDto);
+            
         }
         [HttpPost]
-        public IActionResult Create(FirmaBilgiDto firmaBilgi)
+        public IActionResult Create(FirmaBilgiCreateDto firmaBilgi)
         {
             if (ModelState.IsValid)
             {
-                var fb = mapper.Map<FirmaBilgiDto, FirmaBilgi>(firmaBilgi);
+                var fb = mapper.Map<FirmaBilgiCreateDto, FirmaBilgi>(firmaBilgi);
+                
                 try
                 {
                     manager.CheckForVergiNo(fb.VergiNumarası);
                     manager.Add(fb);
+                    return RedirectToAction("Index", "FirmaBilgi", new { Areas = "Admin" });
                 }
                 catch (Exception ex)
                 {
 
                     ModelState.AddModelError("",ex.Message);
                 }
-                return RedirectToAction("Index", "FirmaBilgi");
+                
 
             }
+            return View(firmaBilgi);
+        } 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var firmaBilgi = manager.Find(id);
+            var updateDto = mapper.Map<FirmaBilgi, FirmaBilgiCreateDto>(firmaBilgi);
+            return View(updateDto);
+        }
+        [HttpPost]
+        public IActionResult Update(FirmaBilgiCreateDto update)
+        {
             return View();
         }
-    }
+    }    
 }

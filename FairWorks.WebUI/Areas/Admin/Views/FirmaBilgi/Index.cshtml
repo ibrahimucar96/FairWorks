@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<FirmaBilgi>
 
-    <p>
+ <p>
     <a class="btn btn-success" asp-controller="FirmaBilgi" asp-action="Create">Yeni</a>
 </p>
 
@@ -15,7 +15,8 @@
             <td>@Html.DisplayNameFor(model=>model.Telefon)</td>
             <td>@Html.DisplayNameFor(model=>model.VergiDairesi)</td>
             <td>@Html.DisplayNameFor(model=>model.VergiNumarası)</td>
-            <td>@Html.DisplayNameFor(model=>model.FuarYetkilisi)</td>                      
+            <td>@Html.DisplayNameFor(model=>model.FuarYetkilisi)</td>
+            <td>@Html.DisplayNameFor(model=>model.UcretsizVerilenAlanId)</td>            
             <td>Islem</td>
 
         </tr>
@@ -29,7 +30,8 @@
                 <td>@item.Telefon</td>
                 <td>@item.VergiDairesi</td>
                 <td>@item.VergiNumarası</td>
-                <td>@item.FuarYetkilisi</td>                
+                <td>@item.FuarYetkilisi</td>
+                <td>@item.UcretsizVerilenAlanId</td>                
                 <td><a asp-controller="FirmaBilgi" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
                 <a asp-controller="FirmaBilgi" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
             </tr>

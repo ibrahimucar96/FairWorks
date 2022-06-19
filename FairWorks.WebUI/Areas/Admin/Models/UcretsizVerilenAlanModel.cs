@@ -3,6 +3,6 @@
     public class UcretsizVerilenAlanModel
     {
         public int UcretsizVerilenAlanId { get; set; }
-        public decimal UcretsizVerilenm2 { get; set; }
+        public string UcretsizVerilenm2 { get; set; }
     }
 }
