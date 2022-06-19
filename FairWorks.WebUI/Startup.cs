@@ -55,6 +55,7 @@ namespace FairWorks.WebUI
             services.AddScoped<ITemsilEttigiFirmaManager,TemsilEttigiFirmaManager>();
             services.AddScoped<IUrunManager,UrunManager>();
             services.AddScoped<IZiyaretciManager,ZiyaretciManager>();
+            services.AddScoped<IUcretsizVerilenAlanManager,UcretsizVerilenAlanManager>();
 
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

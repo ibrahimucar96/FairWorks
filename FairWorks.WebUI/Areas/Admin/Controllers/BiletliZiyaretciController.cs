@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using FairWorks.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
+using AutoMapper;
+using FairWorks.WebUI.Areas.Admin.Models.Dto;
 
 namespace FairWorks.WebUI.Areas.Admin.Controllers
 {
@@ -13,11 +15,13 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
     public class BiletliZiyaretciController : Controller
     {
         private readonly IBiletliZiyaretciManager manager;
+        private readonly IMapper mapper;
 
-        public BiletliZiyaretciController(IBiletliZiyaretciManager manager)
+        public BiletliZiyaretciController(IBiletliZiyaretciManager manager,IMapper mapper)
         {
             ;
             this.manager = manager;
+            this.mapper = mapper;
         }
         public IActionResult Index()
         {
@@ -28,17 +32,18 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            BiletliZiyaretci entity = new BiletliZiyaretci();
+            BiletliZiyaretciDto entity = new BiletliZiyaretciDto();
             
 
             return View(entity);
         }
         [HttpPost]
-        public IActionResult Create(BiletliZiyaretci bz)
+        public IActionResult Create(BiletliZiyaretciDto bz)
         {
             if (ModelState.IsValid)
             {
-                manager.Add(bz);
+                var biletliZiyaretci = mapper.Map<BiletliZiyaretciDto, BiletliZiyaretci>(bz);
+                manager.Add(biletliZiyaretci);
                 return RedirectToAction("Index","BiletliZiyaretci");
                 
             }

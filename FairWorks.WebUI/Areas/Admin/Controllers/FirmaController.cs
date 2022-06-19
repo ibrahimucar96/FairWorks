@@ -1,5 +1,7 @@
-﻿using FairWorks.BLManager.Abstract;
+﻿using AutoMapper;
+using FairWorks.BLManager.Abstract;
 using FairWorks.Domain.Entities;
+using FairWorks.WebUI.Areas.Admin.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +12,12 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
     public class FirmaController : Controller
     {
         private readonly IFirmaManager manager;
+        private readonly IMapper mapper;
 
-        public FirmaController(IFirmaManager manager)
+        public FirmaController(IFirmaManager manager,IMapper mapper)
         {
             this.manager = manager;
+            this.mapper = mapper;
         }
        
         public IActionResult Index()
@@ -24,17 +28,19 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            Firma entity = new Firma();
+            FirmaDto entity = new FirmaDto();
 
 
             return View(entity);
         }
         [HttpPost]
-        public IActionResult Create(Firma firma)
+        public IActionResult Create(FirmaDto firma)
         {
             if (ModelState.IsValid)
             {
-                manager.Add(firma);
+                var f = mapper.Map<FirmaDto, Firma>(firma);
+                manager.CheckForFirmaAdi(f.FirmaAd);
+                manager.Add(f);
                 return RedirectToAction("Index", "Firma");
 
             }

@@ -8,8 +8,15 @@ namespace FairWorks.WebUI.Areas.Admin.Models
     {
         public MapperProfile()
         {
+            CreateMap<BiletliZiyaretci, BiletliZiyaretciDto>();
+            CreateMap<BiletliZiyaretciDto, BiletliZiyaretci>();
+            CreateMap<DavetiyesizZiyaretci, DavetiyesizZiyaretciDto>();
+            CreateMap<DavetiyesizZiyaretciDto, DavetiyesizZiyaretci>();
+            CreateMap<Firma,FirmaDto>();
+            CreateMap<FirmaDto,Firma>();
             CreateMap<FirmaBilgi, FirmaBilgiDto>();
             CreateMap<FirmaBilgiDto, FirmaBilgi>();
+            CreateMap<UcretsizVerilenAlan,UcretsizVerilenAlanModel>();
         }
     }
 }
