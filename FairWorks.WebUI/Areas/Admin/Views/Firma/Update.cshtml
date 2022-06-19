@@ -1,23 +1,11 @@
-﻿@model BiletliZiyaretci
+﻿@model Firma
 
-<form method="post" asp-controller="BiletliZiyaretci" asp-action="Update">
+<form method="post" asp-controller="Firma" asp-action="Update">
 
     <div class="form-group row">
-        <label asp-for="Ad" class="col-md-4 col-form-label"></label>        
+        <label asp-for="FirmaAd" class="col-md-4 col-form-label"></label>        
         <div class="col-md-8">
-            <input type="text" asp-for="Ad" class="form-control" value="@Model.Ad"/>
-        </div>       
-    </div>
-    <div class="form-group row">
-        <label asp-for="SoyAd" class="col-md-4 col-form-label"></label>        
-        <div class="col-md-8">
-            <input type="text" asp-for="SoyAd" class="form-control"value="@Model.SoyAd"/>
-        </div>       
-    </div>
-    <div class="form-group row">
-        <label asp-for="FirmaAdı" class="col-md-4 col-form-label"></label>        
-        <div class="col-md-8">
-            <input type="text" asp-for="FirmaAdı" class="form-control"value="@Model.FirmaAdı"/>
+            <input type="text" asp-for="FirmaAd" class="form-control" value="@Model.FirmaAd"/>
         </div>       
     </div>
     <div class="form-group row">
@@ -45,16 +33,22 @@
         </div>       
     </div>
     <div class="form-group row">
-        <label asp-for="Meslek" class="col-md-4 col-form-label"></label>        
+        <label asp-for="Ulke" class="col-md-4 col-form-label"></label>        
         <div class="col-md-8">
-            <input type="text" asp-for="Meslek" class="form-control"value="@Model.Meslek"/>
+            <input type="text" asp-for="Ulke" class="form-control"value="@Model.Ulke"/>
+        </div>       
+    </div>
+    <div class="form-group row">
+        <label asp-for="Sehir" class="col-md-4 col-form-label"></label>        
+        <div class="col-md-8">
+            <input type="text" asp-for="Sehir" class="form-control"value="@Model.Sehir"/>
         </div>       
     </div>
     <div class="form-group row">
         <button type="submit" class="btn btn-primary">Kaydet</button>
     </div>
     <div class="form-group row">
-        <a class="btn btn-secondary" asp-action="Index" asp-controller="BiletliZiyaretci">Geri Dön</a>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Firma">Geri Dön</a>
     </div>
 
 </form>

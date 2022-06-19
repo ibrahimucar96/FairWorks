@@ -36,12 +36,13 @@ namespace FairWorks.DAL.EFCore
         }
         public void Delete(TEntity entity)
         {
+
             dbContext.Set<TEntity>().Remove(entity);
             dbContext.SaveChanges();
         }
 
         public int Delete(int id)
-        {
+        {            
             var entity = dbContext.Set<TEntity>().Find(id);
             dbContext.Set<TEntity>().Remove(entity);
             return dbContext.SaveChanges();

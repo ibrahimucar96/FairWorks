@@ -27,6 +27,7 @@ namespace FairWorks.Domain.Entities
         public bool ImzaliSozlesmeDurumu { get; set; }
         public int salonId { get; set; }
         public Salon Salon { get; set; }
+        
 
     }
 }

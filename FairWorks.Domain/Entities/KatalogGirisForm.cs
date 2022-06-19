@@ -9,12 +9,16 @@ namespace FairWorks.Domain.Entities
     public class KatalogGirisForm
     {
         public int Id { get; set; }
-        public int FirmaId { get; set; }
-        public Firma Firma { get; set; }
+        public string FirmaAdi { get; set; }
+        public string Adres { get; set; }
+        public string Telefon { get; set; }
+        public string Eposta { get; set; }
+        public string Faks { get; set; }
         public int UrunId { get; set; }
         public Urun UrunGrupları { get; set; }
         public int FirmaTipId { get; set; }
-        public FirmaTipi FirmaTip { get; set; }
+        public int TemsilEttigiFirmaId { get; set; }
+        public FirmaTipveTemsilEdilenFirma FirmaTipveTemsilEdilenFirmalar { get; set; }
 
     }
 }

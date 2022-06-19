@@ -1,6 +1,6 @@
-﻿@model BiletliZiyaretci
+﻿@model DavetiyesizZiyaretci
 
-<form method="post" asp-controller="BiletliZiyaretci" asp-action="Delete">
+<form method="post" asp-controller="DavetiyesizZiyaretci" asp-action="Delete">
 
     <div class="form-group row">
         <label asp-for="Ad" class="col-md-4 col-form-label">@Model.Ad</label>        
@@ -14,11 +14,7 @@
         <label asp-for="FirmaAdı" class="col-md-4 col-form-label">@Model.FirmaAdı</label>        
         
     </div>       
-    
-    <div class="form-group row">
-        <label asp-for="Adres" class="col-md-4 col-form-label">@Model.Adres</label>        
-           
-    </div>
+        
     <div class="form-group row">
         <label asp-for="Telefon" class="col-md-4 col-form-label">@Model.Telefon</label>        
              
@@ -35,10 +31,10 @@
         <label asp-for="Meslek" class="col-md-4 col-form-label">@Model.Meslek</label>        
         
     </div>
-     <p>Bu Kaydi Silmek Istediginizden Eminmisinz?</p>
+     <p>Bu Kaydi Silmek İstediginizden Eminmisinz?</p>
     <div class="form-group row">
         <button type="submit" class="btn btn-primary">Sil</button>
-        <a class="btn btn-secondary" asp-action="Index" asp-controller="BiletliZiyaretci">Listeye Geri Dön</a>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="DavetiyesizZiyaretci">Listeye Geri Dön</a>
     </div>
 
 </form>

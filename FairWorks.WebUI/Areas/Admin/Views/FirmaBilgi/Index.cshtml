@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FirmaBilgi>
+
+    <p>
+    <a class="btn btn-success" asp-controller="FirmaBilgi" asp-action="Create">Yeni</a>
+</p>
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model=>model.Id)</td>
+            <td>@Html.DisplayNameFor(model=>model.Adres)</td>
+            <td>@Html.DisplayNameFor(model=>model.Telefon)</td>
+            <td>@Html.DisplayNameFor(model=>model.VergiDairesi)</td>
+            <td>@Html.DisplayNameFor(model=>model.VergiNumarası)</td>
+            <td>@Html.DisplayNameFor(model=>model.FuarYetkilisi)</td>                      
+            <td>Islem</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Adres</td>
+                <td>@item.Telefon</td>
+                <td>@item.VergiDairesi</td>
+                <td>@item.VergiNumarası</td>
+                <td>@item.FuarYetkilisi</td>                
+                <td><a asp-controller="FirmaBilgi" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                <a asp-controller="FirmaBilgi" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>

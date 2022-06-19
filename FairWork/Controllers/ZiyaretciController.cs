@@ -28,7 +28,7 @@ namespace FairWorks.Controllers
             return manager.Find(id);
         }
         [HttpPost]
-        public IActionResult PostAction(int firmaId, string yetkili, string unvani, string dahiliTelefon, string direktTelefon, string sektor)
+        public IActionResult PostAction(string firmaAdi, string yetkili, string unvani,string telefon, string dahiliTelefon, string direktTelefon, string sektor)
         {
             Ziyaretci ziyaretci = new Ziyaretci();
             ziyaretci.FirmaId= firmaId;

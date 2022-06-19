@@ -32,7 +32,7 @@ namespace FairWorks.Domain.Entities
         public DbSet<Urun> Urunler { get; set; }
         public DbSet<Ziyaretci> Ziyaretciler { get; set; }
         public DbSet<FirmaBilgi> FirmaBilgileri { get; set; }
-
+        public DbSet<UcretsizVerilenAlan> UcretsizVerilenAlanlar { get; set; }
 
         public FairWorksDbContext()
         {

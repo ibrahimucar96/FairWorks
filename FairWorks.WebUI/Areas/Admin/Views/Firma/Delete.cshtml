@@ -1,0 +1,40 @@
+﻿@model Firma
+
+<form method="post" asp-controller="Firma" asp-action="Delete">
+
+    <div class="form-group row">
+        <label asp-for="FirmaAd" class="col-md-4 col-form-label">@Model.FirmaAd</label>        
+        
+    </div>
+    <div class="form-group row">
+        <label asp-for="Adres" class="col-md-4 col-form-label">@Model.Adres</label>        
+        
+    </div>
+    <div class="form-group row">
+        <label asp-for="Telefon" class="col-md-4 col-form-label">@Model.Telefon</label>        
+        
+    </div>       
+    
+    <div class="form-group row">
+        <label asp-for="Eposta" class="col-md-4 col-form-label">@Model.Eposta</label>        
+           
+    </div>
+    <div class="form-group row">
+        <label asp-for="Faks" class="col-md-4 col-form-label">@Model.Faks</label>        
+             
+    </div>
+    <div class="form-group row">
+        <label asp-for="Ulke" class="col-md-4 col-form-label">@Model.Ulke</label>        
+        
+    </div>
+    <div class="form-group row">
+        <label asp-for="Sehir" class="col-md-4 col-form-label">@Model.Sehir</label>        
+       
+    </div>
+     <p>Bu Kaydi Silmek Istediginizden Eminmisinz?</p>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Sil</button>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Firma">Listeye Geri Dön</a>
+    </div>
+
+</form>

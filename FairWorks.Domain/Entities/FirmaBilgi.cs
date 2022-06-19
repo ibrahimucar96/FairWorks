@@ -11,6 +11,12 @@ namespace FairWorks.Domain.Entities
         public string VergiDairesi { get; set; }
         public string VergiNumarası { get; set; }
         public string FuarYetkilisi { get; set; }
+        public int UcretsizVerilenAlanId { get; set; }
+        public UcretsizVerilenAlan UcretsizVerilenAlanlar { get; set; }
         public ICollection<SozlesmeBilgisi> SozlesmeBilgisi { get; set; }
+        
+
+
+
     }
 }

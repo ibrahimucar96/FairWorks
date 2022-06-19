@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace FairWorks.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class BiletliZiyaretciController : Controller
     {
         private readonly IBiletliZiyaretciManager manager;

@@ -30,6 +30,8 @@ namespace FairWorks.WebUI
             services.AddControllersWithViews();
 
             services.AddDbContext<FairWorksDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("db")));
+            //AutoMapper eklendi
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IBiletliZiyaretciManager,BiletliZiyaretciManager>();
             services.AddScoped<IDavetiyesizZiyaretciManager,DavetiyesizZiyaretciManager>();
             services.AddScoped<IDovizManager,DovizManager>();

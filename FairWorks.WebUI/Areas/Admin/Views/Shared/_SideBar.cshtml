@@ -1,11 +1,12 @@
-﻿<div class="sidebar">
+﻿
+<div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
             <img src="~/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">Admin</a>
         </div>
     </div>
 
@@ -36,33 +37,33 @@
                 </a>*@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="BiletliZiyaretci" asp-action="Index">
+                        <a class="nav-link active" asp-controller="BiletliZiyaretci" asp-action="Index">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Biletli Ziyaretciler</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="Index" asp-controller="Ogrenci">
+                        <a class="nav-link active"  asp-controller="DavetiyesizZiyaretci" asp-action="Index">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Ogrenci</p>
+                            <p>Davetiyesiz Ziyaretciler</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-action="Index" asp-controller="Ogretmen" class="nav-link active">
+                        <a asp-action="Index" asp-controller="Doviz" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Ogretmen</p>
+                            <p>Kurlar</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index3.html" class="nav-link active">
+                        <a asp-action="Index" asp-controller="Firma" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Sinif</p>
+                            <p>Firmalar</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="./index3.html" class="nav-link active">
+                        <a asp-action="Index" asp-controller="FirmaBilgi" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Plan</p>
+                            <p>Firma Bilgileri</p>
                         </a>
                     </li>
                     <li class="nav-item">

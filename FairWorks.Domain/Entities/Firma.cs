@@ -18,11 +18,8 @@ namespace FairWorks.Domain.Entities
         public string Sehir { get; set; }
         public string Ulke { get; set; }
         
-        public ICollection<DavetiyesizZiyaretci> DavetiyesizZiyaretciler { get; set; }
-        public ICollection<GorusulenFirma> GorusulenFirmalar { get; set; }
-        
-        public ICollection<SozlesmeBilgisi> SozlesmeBilgileri { get; set; }
-        public ICollection<Ziyaretci> Ziyaretciler { get; set; }    
+              
+          
         
 
     }
