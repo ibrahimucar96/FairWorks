@@ -61,8 +61,8 @@ namespace FairWorks.DAL.EFCore
 
         public void Update(TEntity entity)
         {
-           dbContext.Set<TEntity>().Update(entity);
-           dbContext.SaveChanges();
+            dbContext.Entry<TEntity>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            dbContext.SaveChanges();
         }
     }
 }

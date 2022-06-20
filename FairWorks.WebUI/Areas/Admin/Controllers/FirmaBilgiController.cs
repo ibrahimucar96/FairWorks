@@ -62,19 +62,14 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             {
                 var fb = mapper.Map<FirmaBilgiCreateDto, FirmaBilgi>(firmaBilgi);
                 
-                try
-                {
+               
+                
                     manager.CheckForVergiNo(fb.VergiNumarası);
                     manager.Add(fb);
                     return RedirectToAction("Index", "FirmaBilgi", new { Areas = "Admin" });
-                }
-                catch (Exception ex)
-                {
-
-                    ModelState.AddModelError("",ex.Message);
-                }
                 
-
+                
+                                                                
             }
             return View(firmaBilgi);
         } 
@@ -83,12 +78,42 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         {
             var firmaBilgi = manager.Find(id);
             var updateDto = mapper.Map<FirmaBilgi, FirmaBilgiCreateDto>(firmaBilgi);
+            
+            var alan = ucretsizVerilenAlan.GetAll(null);
+            List<UcretsizVerilenAlanModel> alanModel = new();
+            foreach (var item in alan)
+            {
+                alanModel.Add(new UcretsizVerilenAlanModel { UcretsizVerilenAlanId = item.UcretsizVerilenAlanId, UcretsizVerilenm2=item.UcretsizVerilenm2 });
+            }
+            var alanSelectList = new SelectList(alanModel, "UcretsizVerilenAlanId", "UcretsizVerilenm2");
+            ViewBag.Alanlar = alanSelectList;
             return View(updateDto);
         }
         [HttpPost]
         public IActionResult Update(FirmaBilgiCreateDto update)
         {
+            if (ModelState.IsValid)
+            {
+                var firmaBilgi = mapper.Map<FirmaBilgiCreateDto, FirmaBilgi>(update);
+                if (!manager.CheckForVergiNo(update.VergiNumarası))
+                {
+                    
+                    manager.Update(firmaBilgi);
+                    return RedirectToAction("Index", "FirmaBilgi");
+                }
+                else
+
+                    ModelState.AddModelError("", "Vergi Numarasi Yanlis Girilmistir");
+
+            }
+
             return View();
+        }
+        public IActionResult Delete(int id)
+        {
+            var values = manager.Find(id);
+            manager.Delete(values);
+            return RedirectToAction("Index", "FirmaBilgi");
         }
     }    
 }

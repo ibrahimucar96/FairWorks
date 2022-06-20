@@ -11,5 +11,6 @@ namespace FairWorks.BLManager.Abstract
     {
         public bool CheckForTcNo(string tcno);
         public bool CheckForGsm(string gsm);
+        public bool TcDogrula(string tcno);
     }
 }

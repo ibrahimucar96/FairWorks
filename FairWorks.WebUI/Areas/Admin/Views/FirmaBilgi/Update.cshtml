@@ -1,9 +1,10 @@
 ﻿@model FirmaBilgiCreateDto
 
-<form method="post" asp-controller="FirmaBilgi" asp-action="Create">
+<form method="post" asp-controller="FirmaBilgi" asp-action="Update">
 
     @Html.ValidationSummary(true)
-
+    
+    
     <div class="form-group row">
         <label asp-for="Adres" class="col-md-4 col-form-label"></label>
 

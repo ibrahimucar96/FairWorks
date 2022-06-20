@@ -8,6 +8,7 @@ namespace FairWorks.WebUI.Areas.Admin.Models.Dto
     public class FirmaBilgiCreateDto
     {
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Adres Alani Boş Olamaz.")]
         [MaxLength(255)]
         public string Adres { get; set; }
