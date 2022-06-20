@@ -101,9 +101,9 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                     manager.Update(firmaBilgi);
                     return RedirectToAction("Index", "FirmaBilgi");
                 }
-                else
+                
 
-                    ModelState.AddModelError("", "Vergi Numarasi Yanlis Girilmistir");
+                    
 
             }
 
@@ -114,6 +114,6 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             var values = manager.Find(id);
             manager.Delete(values);
             return RedirectToAction("Index", "FirmaBilgi");
-        }
+        }        
     }    
 }

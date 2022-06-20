@@ -1,0 +1,28 @@
+﻿@model IEnumerable<FirmaTipi>
+
+<p>
+    <a class="btn btn-success" asp-controller="FirmaTipi" asp-action="Create">Yeni</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.FirmaTipId)</td>
+            <td>@Html.DisplayNameFor(model => model.FirmaTip)</td>
+            <td>Islem</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+       {
+           <tr>
+               <td>@item.FirmaTipId</td>
+               <td>@item.FirmaTip</td>
+               <td><a asp-controller="FirmaTipi" asp-action="Update" asp-route-id="@item.FirmaTipId" class="btn btn-primary">Guncelle</a>
+               <a asp-controller="FirmaTipi" asp-action="Delete" asp-route-id="@item.FirmaTipId" class="btn btn-danger">Sil</a></td>
+
+           </tr>
+       }
+    </tbody>
+
+</table>

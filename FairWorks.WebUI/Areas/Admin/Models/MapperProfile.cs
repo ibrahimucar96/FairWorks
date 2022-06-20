@@ -17,6 +17,8 @@ namespace FairWorks.WebUI.Areas.Admin.Models
             CreateMap<FirmaBilgi, FirmaBilgiCreateDto>();
             CreateMap<FirmaBilgiCreateDto, FirmaBilgi>();
             CreateMap<UcretsizVerilenAlan,UcretsizVerilenAlanModel>();
+            CreateMap<FirmaTipi, FirmaTipiDto>();
+            CreateMap<FirmaTipiDto, FirmaTipi>();
         }
     }
 }
