@@ -1,0 +1,102 @@
+﻿@model GorusulenFirmaCreateDto
+
+
+<form method="post" asp-controller="GorusulenFirma" asp-action="Create">
+
+    @Html.ValidationSummary(true)
+
+    <div class="form-group row">
+        <label asp-for="GorusmeTarihi" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="GorusmeTarihi" class="form-control" />
+            <span asp-validation-for="GorusmeTarihi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="GorusulenKisi" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="GorusulenKisi" class="form-control" />
+            <span asp-validation-for="GorusulenKisi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Unvanı" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="Unvanı" class="form-control" />
+            <span asp-validation-for="Unvanı" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label asp-for="Telefon" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="Telefon" class="form-control" />
+            <span asp-validation-for="Telefon" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Eposta" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="Eposta" class="form-control" />
+            <span asp-validation-for="Eposta" class="text-danger"></span>
+        </div>
+    </div>    
+    <div class="form-group row">
+        <label asp-for="FirmanınCalıstıgıSektoru" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="FirmanınCalıstıgıSektoru" class="form-control" />
+            <span asp-validation-for="FirmanınCalıstıgıSektoru" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="FirmaninProfili" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="FirmaninProfili" class="form-control" />
+            <span asp-validation-for="FirmaninProfili" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="form-group row">
+        <label asp-for="FirmaninIlgilendigiFuar" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="FirmaninIlgilendigiFuar" class="form-control" />
+            <span asp-validation-for="FirmaninIlgilendigiFuar" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="form-group row">
+        <label asp-for="FirmaninIlgilendigiSalon" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="FirmaninIlgilendigiSalon" class="form-control" />
+            <span asp-validation-for="FirmaninIlgilendigiSalon" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="form-group row">
+        <label asp-for="GorusmeNotlari" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="GorusmeNotlari" class="form-control" />
+            <span asp-validation-for="GorusmeNotlari" class="text-danger"></span>
+        </div>
+    </div>
+        
+    <div class="form-group row">
+        <select id="ddlPersonel" asp-for="PersonelId" asp-items="@ViewBag.Personel">
+            <option value="0">Personel Seciniz</option>
+        </select>
+     </div>
+     
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+
+</form>

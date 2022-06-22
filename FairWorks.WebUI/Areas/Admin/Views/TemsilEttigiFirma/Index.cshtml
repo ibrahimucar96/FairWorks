@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TemsilEttigiFirma>
+
+    <p>
+        <a class="btn btn-success" asp-controller="TemsilEttigiFirma" asp-action="Create">Yeni</a>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.TemsilEttigiFirmaId)</td>
+                <td>@Html.DisplayNameFor(model => model.TemsilEdilenFirma)</td>
+                <td>@Html.DisplayNameFor(model => model.Ulke)</td>
+                <td>@Html.DisplayNameFor(model => model.TemsilEdilenFirmaUrunleri)</td>
+                <td>@Html.DisplayNameFor(model => model.IletisimBilgileri)</td>
+                <td>Islem</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+           {
+               <tr>
+                   <td>@item.TemsilEttigiFirmaId</td>
+                   <td>@item.TemsilEdilenFirma</td>
+                   <td>@item.Ulke</td>
+                   <td>@item.TemsilEdilenFirmaUrunleri</td>
+                   <td>@item.IletisimBilgileri</td>
+                   <td><a asp-controller="TemsilEttigiFirma" asp-action="Update" asp-route-id="@item.TemsilEttigiFirmaId" class="btn btn-primary">Güncelle</a>
+                       <a asp-controller="TemsilEttigiFirma" asp-action="Delete" asp-route-id="@item.TemsilEttigiFirmaId" class="btn btn-danger">Sil</a></td>
+               </tr>
+           }
+        </tbody>
+    </table>

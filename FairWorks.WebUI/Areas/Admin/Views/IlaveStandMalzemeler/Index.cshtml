@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IlaveStandMalzemeler>
+
+ <p>
+    <a class="btn btn-success" asp-controller="IlaveStandMalzemeler" asp-action="Create">Yeni</a>
+</p>
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model=>model.Id)</td>
+            <td>@Html.DisplayNameFor(model=>model.IlaveStandMalzemesi)</td>
+            <td>@Html.DisplayNameFor(model=>model.MalzemeKodu)</td>
+            <td>@Html.DisplayNameFor(model=>model.MalzemeAdı)</td>
+            <td>@Html.DisplayNameFor(model=>model.ElektrikKw)</td>
+            <td>@Html.DisplayNameFor(model=>model.Fiyat)</td>
+            <td>@Html.DisplayNameFor(model=>model.Ozellik)</td>
+            <td>@Html.DisplayNameFor(model=>model.TedarikciId)</td> 
+            <td>Islem</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.IlaveStandMalzemesi</td>
+                <td>@item.MalzemeKodu</td>
+                <td>@item.MalzemeAdı</td>
+                <td>@item.ElektrikKw</td>
+                <td>@item.Fiyat</td>
+                <td>@item.Ozellik</td>
+                <td>@item.TedarikciId</td>  
+                <td><a asp-controller="IlaveStandMalzemeler" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                <a asp-controller="IlaveStandMalzemeler" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>

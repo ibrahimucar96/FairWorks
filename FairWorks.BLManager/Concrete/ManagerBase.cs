@@ -29,13 +29,13 @@ namespace FairWorks.BLManager.Concrete
             db.Delete(model);
         }
 
-        public int Delete(int id)
+        public void Delete(int id)
         {
-            var entity = Find(id);
-            if(entity != null)
-                db.Delete(entity);
+            //var entity = Find(id);
+            //if(entity != null)
+            //    db.Delete(entity);
 
-           return db.Delete(id);
+            db.Delete(id);
         }
 
         public TEntity Find(int id)

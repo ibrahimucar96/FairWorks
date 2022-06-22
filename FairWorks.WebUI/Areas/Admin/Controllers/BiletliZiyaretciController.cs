@@ -71,11 +71,13 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             var entity = manager.Find(id);
             return View(entity);
         }
+
         [HttpPost]
-        public IActionResult Delete(BiletliZiyaretci bz)
+        public IActionResult Delete(BiletliZiyaretci biletli)
         {
-            manager.Delete(bz);
+            manager.Delete(biletli);
             return RedirectToAction("Index", "BiletliZiyaretci");
+
         }
     }
 }

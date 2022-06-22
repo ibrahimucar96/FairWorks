@@ -1,0 +1,54 @@
+﻿@model IEnumerable<GorusulenFirma>
+
+
+<p>
+    <a class="btn btn-success" asp-controller="GorusulenFirma" asp-action="Create">Yeni</a>
+</p>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model=>model.Id)</td>
+            <td>@Html.DisplayNameFor(model=>model.GorusmeTarihi)</td>
+            <td>@Html.DisplayNameFor(model=>model.GorusulenKisi)</td>
+            <td>@Html.DisplayNameFor(model=>model.Unvanı)</td>
+            <td>@Html.DisplayNameFor(model=>model.Telefon)</td>
+            <td>@Html.DisplayNameFor(model=>model.Eposta)</td>
+            <td>@Html.DisplayNameFor(model=>model.FirmanınCalıstıgıSektoru)</td>
+            <td>@Html.DisplayNameFor(model=>model.FirmaninProfili)</td>
+            <td>@Html.DisplayNameFor(model=>model.FirmaninIlgilendigiFuar)</td>
+            <td>@Html.DisplayNameFor(model=>model.FirmaninIlgilendigiSalon)</td>
+            <td>@Html.DisplayNameFor(model=>model.GorusmeNotlari)</td>
+            <td>@Html.DisplayNameFor(model=>model.PersonelId)</td>
+            
+            <td>Islem</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.GorusmeTarihi</td>
+                <td>@item.GorusulenKisi</td>
+                <td>@item.Unvanı</td>
+                <td>@item.Telefon</td>
+                <td>@item.Eposta</td>
+                <td>@item.FirmanınCalıstıgıSektoru</td>
+                <td>@item.FirmaninProfili</td> 
+                <td>@item.FirmaninIlgilendigiFuar</td> 
+                <td>@item.FirmaninIlgilendigiSalon</td> 
+                <td>@item.GorusmeNotlari</td>                
+                <td>@item.PersonelId</td>
+                
+                
+                <td><a asp-controller="GorusulenFirma" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                <a asp-controller="GorusulenFirma" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+        
+
+    </tbody>
+</table>

@@ -13,7 +13,7 @@ namespace FairWorks.Domain.Entities
         
         public string IlaveStandMalzemesi { get; set; }
         public int MalzemeKodu { get; set; }
-        public string MalzemeleAdı { get; set; }
+        public string MalzemeAdı { get; set; }
         public string ElektrikKw { get; set; }
         public decimal Fiyat { get; set; }
         public string Ozellik { get; set; }

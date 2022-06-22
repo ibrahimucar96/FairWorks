@@ -36,7 +36,7 @@ namespace FairWorks.DAL.EFCore
         }
         public void Delete(TEntity entity)
         {
-
+            //dbContext.Entry<TEntity>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             dbContext.Set<TEntity>().Remove(entity);
             dbContext.SaveChanges();
         }

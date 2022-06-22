@@ -1,0 +1,68 @@
+﻿@model IlaveStandMalzemelerCreateDto
+
+<form method="post" asp-controller="IlaveStandMalzemeler" asp-action="Create">
+
+    @Html.ValidationSummary(true)
+
+    <div class="form-group row">
+        <label asp-for="IlaveStandMalzemesi" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="IlaveStandMalzemesi" class="form-control" />
+            <span asp-validation-for="IlaveStandMalzemesi" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="MalzemeKodu" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="MalzemeKodu" class="form-control" />
+            <span asp-validation-for="MalzemeKodu" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="MalzemeAdı" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="MalzemeAdı" class="form-control" />
+            <span asp-validation-for="MalzemeAdı" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label asp-for="ElektrikKw" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="ElektrikKw" class="form-control" />
+            <span asp-validation-for="ElektrikKw" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Fiyat" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="Fiyat" class="form-control" />
+            <span asp-validation-for="Fiyat" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="form-group row">
+        <label asp-for="Ozellik" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="Ozellik" class="form-control" />
+            <span asp-validation-for="Ozellik" class="text-danger"></span>
+        </div>
+    </div>
+        
+    <div class="form-group row">
+        <select id="ddlTedarikci" asp-for="TedarikciId" asp-items="@ViewBag.Tedarikci">
+            <option value="0">Tedarikci Seciniz</option>
+        </select>
+     </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+
+</form>

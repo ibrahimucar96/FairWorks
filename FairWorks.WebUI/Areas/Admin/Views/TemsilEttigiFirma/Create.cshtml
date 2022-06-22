@@ -1,0 +1,36 @@
+﻿@model TemsilEttigiFirmaDto
+
+<form method="post" asp-controller="TemsilEttigiFirma" asp-action="Create">
+    <div class="form-group row">
+        <label asp-for="TemsilEdilenFirma" class="col-md-6 col-form-label"></label>
+        <div class="cold-md-6">
+            <input type="text" asp-for="TemsilEdilenFirma" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Ulke" class="col-md-6 col-form-label"></label>
+        <div class="cold-md-6">
+            <input type="text" asp-for="Ulke" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="TemsilEdilenFirmaUrunleri" class="col-md-6 col-form-label"></label>
+        <div class="cold-md-6">
+            <input type="text" asp-for="TemsilEdilenFirmaUrunleri" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="IletisimBilgileri" class="col-md-6 col-form-label"></label>
+        <div class="cold-md-6">
+            <input type="text" asp-for="IletisimBilgileri" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+    <div class="form-group row">
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="TemsilEttigiFirma">Geri Dön</a>
+    </div>
+
+
+</form>

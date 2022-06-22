@@ -50,26 +50,17 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 alanSelectList.Add(new UcretsizVerilenAlanModel { UcretsizVerilenAlanId=item.UcretsizVerilenAlanId,UcretsizVerilenm2 = item.UcretsizVerilenm2 });
             }
             ViewBag.Alanlar = new SelectList(alanSelectList, "UcretsizVerilenAlanId", "UcretsizVerilenm2");
-            return View(firmabilgi);
-
-
-            
+            return View(firmabilgi);            
         }
         [HttpPost]
         public IActionResult Create(FirmaBilgiCreateDto firmaBilgi)
         {
             if (ModelState.IsValid)
             {
-                var fb = mapper.Map<FirmaBilgiCreateDto, FirmaBilgi>(firmaBilgi);
-                
-               
-                
+                var fb = mapper.Map<FirmaBilgiCreateDto, FirmaBilgi>(firmaBilgi);                                               
                     manager.CheckForVergiNo(fb.VergiNumarası);
                     manager.Add(fb);
-                    return RedirectToAction("Index", "FirmaBilgi", new { Areas = "Admin" });
-                
-                
-                                                                
+                    return RedirectToAction("Index", "FirmaBilgi", new { Areas = "Admin" });      
             }
             return View(firmaBilgi);
         } 
@@ -100,11 +91,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                     
                     manager.Update(firmaBilgi);
                     return RedirectToAction("Index", "FirmaBilgi");
-                }
-                
-
-                    
-
+                }                                  
             }
 
             return View();
