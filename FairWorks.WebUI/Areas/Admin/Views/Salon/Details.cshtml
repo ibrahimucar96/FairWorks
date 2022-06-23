@@ -1,0 +1,55 @@
+﻿@model FairWorks.Domain.Entities.Salon
+
+<table class="table table-bordered">
+   <div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ulke)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ulke)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sehir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sehir)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SalonNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SalonNo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.m2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.m2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.en)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.en)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.boy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.boy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SektorAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SektorAdi)
+        </dd>
+    </dl>
+</div>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Listeye Dön</a>
+</div>
+

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FairWorks.Domain.Entities.Salon>
+
+
+<p>
+    <a class="btn btn-success" asp-controller="Salon" asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ulke)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sehir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalonNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.m2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.en)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.boy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SektorAdi)
+            </th>
+            <th>Islem</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ulke)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sehir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalonNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.en)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.boy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SektorAdi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"class="btn btn-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id"class="btn btn-primary">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

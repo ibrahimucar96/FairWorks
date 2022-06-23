@@ -1,0 +1,55 @@
+﻿@model FairWorks.Domain.Entities.Salon
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="OdemePlani" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ulke" class="control-label"></label>
+                <input asp-for="Ulke" class="form-control" />
+                <span asp-validation-for="Ulke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sehir" class="control-label"></label>
+                <input asp-for="Sehir" class="form-control" />
+                <span asp-validation-for="Sehir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalonNo" class="control-label"></label>
+                <input asp-for="SalonNo" class="form-control" />
+                <span asp-validation-for="SalonNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="m2" class="control-label"></label>
+                <input asp-for="m2" class="form-control" />
+                <span asp-validation-for="m2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="en" class="control-label"></label>
+                <input asp-for="en" class="form-control" />
+                <span asp-validation-for="en" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="boy" class="control-label"></label>
+                <input asp-for="boy" class="form-control" />
+                <span asp-validation-for="boy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SektorAdi" class="control-label"></label>
+                <input asp-for="SektorAdi" class="form-control" />
+                <span asp-validation-for="SektorAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
