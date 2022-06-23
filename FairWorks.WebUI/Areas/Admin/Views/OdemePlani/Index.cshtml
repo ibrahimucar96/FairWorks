@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FairWorks.Domain.Entities.OdemePlani>
+
+
+<p>
+    <a class="btn btn-success" asp-controller="OdemePlani" asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VadeSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Taksit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faiz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yıl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.m2BirimFiyati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.m2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.indirimOrani)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VadeSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taksit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faiz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yıl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m2BirimFiyati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.indirimOrani)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"class="btn btn-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id"class="btn btn-primary">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

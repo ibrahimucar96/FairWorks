@@ -1,0 +1,63 @@
+﻿@model FairWorks.Domain.Entities.OdemePlani
+
+
+<table class="table table-bordered">
+<div>
+    <h4>OdemePlani</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VadeSayisi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VadeSayisi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Taksit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Taksit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Faiz)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Faiz)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ay)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ay)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yıl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yıl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.m2BirimFiyati)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.m2BirimFiyati)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.m2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.m2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.indirimOrani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.indirimOrani)
+        </dd>
+    </dl>
+</div>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Listeye Dön</a>
+</div>

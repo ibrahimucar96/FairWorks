@@ -21,14 +21,14 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/KatalogGirisForms
+        
         public async Task<IActionResult> Index()
         {
             var fairWorksDbContext = _context.KatalogGirisFormlari.Include(k => k.FirmaTip).Include(k => k.TemsilEttigiFirma).Include(k => k.UrunGrupları);
             return View(await fairWorksDbContext.ToListAsync());
         }
 
-        // GET: Admin/KatalogGirisForms/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,7 +49,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(katalogGirisForm);
         }
 
-        // GET: Admin/KatalogGirisForms/Create
+        
         public IActionResult Create()
         {
             ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTipId");
@@ -58,9 +58,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/KatalogGirisForms/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirmaAdi,Adres,Telefon,Eposta,Faks,UrunId,FirmaTipId,TemsilEttigiFirmaId")] KatalogGirisForm katalogGirisForm)
@@ -77,7 +75,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(katalogGirisForm);
         }
 
-        // GET: Admin/KatalogGirisForms/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,9 +94,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(katalogGirisForm);
         }
 
-        // POST: Admin/KatalogGirisForms/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FirmaAdi,Adres,Telefon,Eposta,Faks,UrunId,FirmaTipId,TemsilEttigiFirmaId")] KatalogGirisForm katalogGirisForm)
@@ -134,7 +130,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(katalogGirisForm);
         }
 
-        // GET: Admin/KatalogGirisForms/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -155,7 +151,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(katalogGirisForm);
         }
 
-        // POST: Admin/KatalogGirisForms/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

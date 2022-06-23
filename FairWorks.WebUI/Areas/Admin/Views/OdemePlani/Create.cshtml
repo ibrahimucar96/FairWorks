@@ -1,0 +1,59 @@
+﻿@model FairWorks.Domain.Entities.OdemePlani
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="OdemePlani" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VadeSayisi" class="control-label"></label>
+                <input asp-for="VadeSayisi" class="form-control" />
+                <span asp-validation-for="VadeSayisi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Taksit" class="control-label"></label>
+                <input asp-for="Taksit" class="form-control" />
+                <span asp-validation-for="Taksit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faiz" class="control-label"></label>
+                <input asp-for="Faiz" class="form-control" />
+                <span asp-validation-for="Faiz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ay" class="control-label"></label>
+                <input asp-for="Ay" class="form-control" />
+                <span asp-validation-for="Ay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yıl" class="control-label"></label>
+                <input asp-for="Yıl" class="form-control" />
+                <span asp-validation-for="Yıl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="m2BirimFiyati" class="control-label"></label>
+                <input asp-for="m2BirimFiyati" class="form-control" />
+                <span asp-validation-for="m2BirimFiyati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="m2" class="control-label"></label>
+                <input asp-for="m2" class="form-control" />
+                <span asp-validation-for="m2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="indirimOrani" class="control-label"></label>
+                <input asp-for="indirimOrani" class="form-control" />
+                <span asp-validation-for="indirimOrani" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
