@@ -17,8 +17,9 @@ namespace FairWorks.Domain.Entities
         public int UrunId { get; set; }
         public Urun UrunGrupları { get; set; }
         public int FirmaTipId { get; set; }
+        public FirmaTipi FirmaTip { get; set; }
         public int TemsilEttigiFirmaId { get; set; }
-        public FirmaTipveTemsilEdilenFirma FirmaTipveTemsilEdilenFirmalar { get; set; }
+        public TemsilEttigiFirma TemsilEttigiFirma { get; set; }
 
     }
 }

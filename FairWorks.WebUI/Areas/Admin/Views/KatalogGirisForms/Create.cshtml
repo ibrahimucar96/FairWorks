@@ -1,0 +1,54 @@
+﻿@model FairWorks.Domain.Entities.KatalogGirisForm
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="KatalogGirisForms" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirmaAdi" class="control-label"></label>
+                <input asp-for="FirmaAdi" class="form-control" />
+                <span asp-validation-for="FirmaAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon" class="control-label"></label>
+                <input asp-for="Telefon" class="form-control" />
+                <span asp-validation-for="Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eposta" class="control-label"></label>
+                <input asp-for="Eposta" class="form-control" />
+                <span asp-validation-for="Eposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faks" class="control-label"></label>
+                <input asp-for="Faks" class="form-control" />
+                <span asp-validation-for="Faks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrunId" class="control-label"></label>
+                <select asp-for="UrunId" class ="form-control" asp-items="ViewBag.UrunId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaTipId" class="control-label"></label>
+                <select asp-for="FirmaTipId" class ="form-control" asp-items="ViewBag.FirmaTipId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemsilEttigiFirmaId" class="control-label"></label>
+                <select asp-for="TemsilEttigiFirmaId" class ="form-control" asp-items="ViewBag.TemsilEttigiFirmaId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                 <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+

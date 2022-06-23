@@ -9,7 +9,6 @@ namespace FairWorks.Domain.Entities
     public class IlaveStandMalzemeler
     {
         public int Id { get; set; }
-
         
         public string IlaveStandMalzemesi { get; set; }
         public int MalzemeKodu { get; set; }

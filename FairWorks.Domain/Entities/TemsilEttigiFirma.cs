@@ -16,8 +16,8 @@ namespace FairWorks.Domain.Entities
         public string Ulke { get; set; }
         public string TemsilEdilenFirmaUrunleri { get; set; }
         public string IletisimBilgileri { get; set; }
-       
 
+        public ICollection<KatalogGirisForm> KatalogGirisForms { get; set; }
         public ICollection<FirmaTipveTemsilEdilenFirma> FirmaTipi { get; set; }
 
     }

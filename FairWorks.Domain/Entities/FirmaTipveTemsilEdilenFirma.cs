@@ -17,6 +17,6 @@ namespace FairWorks.Domain.Entities
         public TemsilEttigiFirma TemsilEttigiFirma { get; set; }
         public FirmaTipi FirmaTipi { get; set; }
 
-        public ICollection<KatalogGirisForm> KatalogGirisForms { get; set; }
+        
     }
 }
