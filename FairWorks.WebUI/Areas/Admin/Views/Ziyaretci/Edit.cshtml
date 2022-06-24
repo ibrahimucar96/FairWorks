@@ -1,0 +1,81 @@
+﻿@model FairWorks.Domain.Entities.Ziyaretci
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="Ziyaretci" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="FirmaAdi" class="control-label"></label>
+                <input asp-for="FirmaAdi" class="form-control" />
+                <span asp-validation-for="FirmaAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yetkili" class="control-label"></label>
+                <input asp-for="Yetkili" class="form-control" />
+                <span asp-validation-for="Yetkili" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unvani" class="control-label"></label>
+                <input asp-for="Unvani" class="form-control" />
+                <span asp-validation-for="Unvani" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon" class="control-label"></label>
+                <input asp-for="Telefon" class="form-control" />
+                <span asp-validation-for="Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DahiliTelefon" class="control-label"></label>
+                <input asp-for="DahiliTelefon" class="form-control" />
+                <span asp-validation-for="DahiliTelefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirektTelefon" class="control-label"></label>
+                <input asp-for="DirektTelefon" class="form-control" />
+                <span asp-validation-for="DirektTelefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faks" class="control-label"></label>
+                <input asp-for="Faks" class="form-control" />
+                <span asp-validation-for="Faks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sehir" class="control-label"></label>
+                <input asp-for="Sehir" class="form-control" />
+                <span asp-validation-for="Sehir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ulke" class="control-label"></label>
+                <input asp-for="Ulke" class="form-control" />
+                <span asp-validation-for="Ulke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sektor" class="control-label"></label>
+                <input asp-for="Sektor" class="form-control" />
+                <span asp-validation-for="Sektor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
