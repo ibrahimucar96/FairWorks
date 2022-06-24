@@ -1,0 +1,18 @@
+﻿@model FairWorks.Domain.Entities.Tedarikci
+
+<table class="table table-bordered">
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Tedarikciler)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Tedarikciler)
+        </dd>
+    </dl>
+</table>    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+    </form>
+

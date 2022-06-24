@@ -1,0 +1,16 @@
+﻿@model FairWorks.Domain.Entities.Tedarikci
+<table class="table table-bordered">
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Tedarikciler)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Tedarikciler)
+        </dd>
+    </dl>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Listeye Dön</a>
+</div>
+

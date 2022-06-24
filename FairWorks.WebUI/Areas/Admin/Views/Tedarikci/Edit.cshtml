@@ -1,0 +1,25 @@
+﻿@model FairWorks.Domain.Entities.Tedarikci
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" asp-controller="Tedarikci" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Tedarikciler" class="control-label"></label>
+                <input asp-for="Tedarikciler" class="form-control" />
+                <span asp-validation-for="Tedarikciler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
