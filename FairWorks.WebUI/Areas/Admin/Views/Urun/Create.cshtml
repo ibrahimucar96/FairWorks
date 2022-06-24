@@ -1,0 +1,45 @@
+﻿@model FairWorks.Domain.Entities.Urun
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="Urun" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UrunAdi" class="control-label"></label>
+                <input asp-for="UrunAdi" class="form-control" />
+                <span asp-validation-for="UrunAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adet" class="control-label"></label>
+                <input asp-for="Adet" class="form-control" />
+                <span asp-validation-for="Adet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrunKodu" class="control-label"></label>
+                <input asp-for="UrunKodu" class="form-control" />
+                <span asp-validation-for="UrunKodu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrunBilgileri" class="control-label"></label>
+                <input asp-for="UrunBilgileri" class="form-control" />
+                <span asp-validation-for="UrunBilgileri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+

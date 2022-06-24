@@ -1,0 +1,43 @@
+﻿@model FairWorks.Domain.Entities.Urun
+
+<table class="table table-bordered">
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Adet)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Adet)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.UrunKodu)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.UrunKodu)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.UrunBilgileri)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.UrunBilgileri)
+        </dd>
+    </dl>
+</table>    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Listeye Dön</a>
+    </form>
+
+
