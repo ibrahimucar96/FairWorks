@@ -1,0 +1,24 @@
+﻿@model FairWorks.Domain.Entities.Doviz
+
+<table class="table table-bordered">
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.DovizCinsi)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.DovizCinsi)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.DovizKuru)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.DovizKuru)
+        </dd>
+    </dl>
+ </table>   
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+    </form>
+

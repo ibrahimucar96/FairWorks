@@ -1,0 +1,31 @@
+﻿@model FairWorks.Domain.Entities.Doviz
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="Dovizs" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DovizCinsi" class="control-label"></label>
+                <input asp-for="DovizCinsi" class="form-control" />
+                <span asp-validation-for="DovizCinsi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DovizKuru" class="control-label"></label>
+                <input asp-for="DovizKuru" class="form-control" />
+                <span asp-validation-for="DovizKuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                 <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

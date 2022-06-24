@@ -1,0 +1,22 @@
+﻿@model FairWorks.Domain.Entities.Doviz
+
+<table class="table table-bordered"> 
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.DovizCinsi)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.DovizCinsi)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.DovizKuru)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.DovizKuru)
+        </dd>
+    </dl>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id"class="btn btn-primary">Edit</a> |
+    <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+</div>

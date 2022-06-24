@@ -1,0 +1,60 @@
+﻿@model FairWorks.Domain.Entities.TeklifBilgisi
+
+<table class="table table-bordered">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeklifTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeklifTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeklifVerilenm2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeklifVerilenm2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.m2birimFiyatı)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.m2birimFiyatı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stand)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stand.Id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Doviz)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Doviz.Id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OdemePlani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OdemePlani.Id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeklifinSonGecerlilikTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeklifinSonGecerlilikTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Salon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Salon.Id)
+        </dd class>
+    </dl>
+</table>    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+    </form>
+
