@@ -1,0 +1,127 @@
+﻿@model IEnumerable<FairWorks.Domain.Entities.SozlesmeBilgisi>
+
+
+<p>
+    <a class="btn btn-success" asp-controller="SozlesmeBilgisi" asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlesmeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelAdi.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelAdi.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonelAdi.SoyAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirmaBilgileri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlesmeTipleri.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlesmeTipleri.SozlesmeTipleri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stand.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stand.StandKodu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdemePlani)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DovizCinsi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DovizKuru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlesmeSonGecerlilikTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImzaliSozlesmeDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salon.Id)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Salon.SalonNo)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Salon.Ulke)
+            </th>
+            <th>Islem</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlesmeTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelAdi.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelAdi.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelAdi.SoyAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmaBilgileri.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlesmeTipleri.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlesmeTipleri.SozlesmeTipleri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stand.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stand.StandKodu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdemePlani.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DovizCinsi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DovizKuru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlesmeSonGecerlilikTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImzaliSozlesmeDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salon.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salon.SalonNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salon.Ulke)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"class="btn btn-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id"class="btn btn-primary">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

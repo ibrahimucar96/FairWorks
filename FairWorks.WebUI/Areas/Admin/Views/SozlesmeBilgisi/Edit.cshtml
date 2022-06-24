@@ -1,0 +1,76 @@
+﻿@model FairWorks.Domain.Entities.SozlesmeBilgisi
+
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" asp-controller="SozlesmeBilgisi" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SozlesmeTarihi" class="control-label"></label>
+                <input asp-for="SozlesmeTarihi" class="form-control" />
+                <span asp-validation-for="SozlesmeTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonelId" class="control-label"></label>
+                <select asp-for="PersonelId" class="form-control" asp-items="ViewBag.PersonelId"></select>
+                <span asp-validation-for="PersonelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaBilgileriId" class="control-label"></label>
+                <select asp-for="FirmaBilgileriId" class="form-control" asp-items="ViewBag.FirmaBilgileriId"></select>
+                <span asp-validation-for="FirmaBilgileriId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SozlesmeTipiId" class="control-label"></label>
+                <select asp-for="SozlesmeTipiId" class="form-control" asp-items="ViewBag.SozlesmeTipiId"></select>
+                <span asp-validation-for="SozlesmeTipiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StandId" class="control-label"></label>
+                <select asp-for="StandId" class="form-control" asp-items="ViewBag.StandId"></select>
+                <span asp-validation-for="StandId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdemePlaniId" class="control-label"></label>
+                <select asp-for="OdemePlaniId" class="form-control" asp-items="ViewBag.OdemePlaniId"></select>
+                <span asp-validation-for="OdemePlaniId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DovizCinsi" class="control-label"></label>
+                <input asp-for="DovizCinsi" class="form-control" />
+                <span asp-validation-for="DovizCinsi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DovizKuru" class="control-label"></label>
+                <input asp-for="DovizKuru" class="form-control" />
+                <span asp-validation-for="DovizKuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SozlesmeSonGecerlilikTarihi" class="control-label"></label>
+                <input asp-for="SozlesmeSonGecerlilikTarihi" class="form-control" />
+                <span asp-validation-for="SozlesmeSonGecerlilikTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ImzaliSozlesmeDurumu" /> @Html.DisplayNameFor(model => model.ImzaliSozlesmeDurumu)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="salonId" class="control-label"></label>
+                <select asp-for="salonId" class="form-control" asp-items="ViewBag.salonId"></select>
+                <span asp-validation-for="salonId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
