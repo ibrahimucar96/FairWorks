@@ -1,0 +1,21 @@
+﻿@model FairWorks.Domain.Entities.SozlesmeTipi
+
+<form method="post" asp-controller="SozlesmeTipi" asp-action="Delete">
+
+    <div class="form-group row">
+        <label asp-for="SozlesmeTipleri" class="col-md-4 col-form-label">@Model.SozlesmeTipleri</label>        
+        
+    </div>
+    
+     <p>Bu Kaydi Silmek İstediginizden Eminmisinz?</p>
+    <div class="form-group row">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Listeye Dön</a>
+    </div>
+
+</form>
+
+
+
+

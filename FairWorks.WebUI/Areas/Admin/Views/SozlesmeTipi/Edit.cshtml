@@ -1,0 +1,28 @@
+﻿@model FairWorks.Domain.Entities.SozlesmeTipi
+
+
+
+
+
+<form method="post" asp-controller="SozlesmeTipi" asp-action="Edit">
+    <h4>SozlesmeTipi</h4>
+    <div class="form-group row">
+        <label asp-for="SozlesmeTipleri" class="col-md-4 col-form-label"></label>        
+        <div class="col-md-8">
+            <input type="text" asp-for="SozlesmeTipleri" class="form-control"/>
+        </div>       
+    </div>
+
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+    <div class="form-group row">
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="SozlesmeTipi">Geri Dön</a>
+    </div>
+
+</form>
+
+
+
+
+

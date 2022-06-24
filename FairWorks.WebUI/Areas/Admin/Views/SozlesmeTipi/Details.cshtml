@@ -1,0 +1,24 @@
+﻿@model FairWorks.Domain.Entities.SozlesmeTipi
+
+<form method="post" asp-controller="SozlesmeTipi">
+<div>
+    <h4>SozlesmeTipi</h4>
+    <hr />
+    <div class="form-group row">
+        <label asp-for="SozlesmeTipleri" class="col-md-4 col-form-label">@Model.SozlesmeTipleri</label>        
+        
+    </div>
+    @*<dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SozlesmeTipleri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SozlesmeTipleri)
+        </dd>
+    </dl>*@
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id"class="btn btn-primary">Edit</a> |
+    <a asp-action="Index"class="btn btn-primary">Listeye Dön</a>
+</div>
+</form>
