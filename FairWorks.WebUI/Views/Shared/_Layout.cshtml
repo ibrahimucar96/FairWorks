@@ -26,13 +26,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Doviz" asp-action="Index">Döviz Kurları</a>
-                        </li>     
+                        </li> 
+                         
                     </ul>
-                    
+                    <a class="nav-link text-dark"  asp-controller="Kullanici" asp-action="Register">Kayit Ol</a>
                             @*<a class="btn btn-success" asp-area="" asp-controller="Kullanici" asp-action="Giris">Giris</a> | *@ 
-                            
-                            <a class="btn btn-primary" asp-area="" asp-controller="Kullanici" asp-action="Register">Kayit Ol</a>
-                             <div class="rt-subs">
+                          
+                           
+                          
+                             @*<div class="rt-subs">*@
                         @if (string.IsNullOrEmpty(User.Identity.Name))
                         {
                             <a class="btn btn-success" asp-controller="Kullanici" asp-action="Giris" title=""> Giriş Yap</a>
@@ -42,7 +44,7 @@
                             
                             <a class="btn btn-success" asp-controller="Kullanici" asp-action="Logout" title=""> Çıkış Yap</a>
                         }
-                    </div>
+                    @*</div>*@
                       @* if (user.Role == "Admin")
                             return RedirectToAction("Index", "Home", new { area = "Admin" });
                       else

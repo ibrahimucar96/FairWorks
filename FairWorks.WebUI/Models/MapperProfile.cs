@@ -10,6 +10,8 @@ namespace FairWorks.WebUI.Models
         {
             CreateMap<LoginDto, Kullanici>();
             CreateMap<Kullanici, LoginDto>();
+            CreateMap<RegisterDto, Kullanici>();
+            CreateMap<Kullanici,RegisterDto>();
         }
     }
 }

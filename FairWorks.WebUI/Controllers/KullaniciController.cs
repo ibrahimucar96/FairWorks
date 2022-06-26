@@ -81,20 +81,20 @@ namespace FairWorks.WebUI.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Register()
         {
-            var registeruser = new LoginDto();
+            var registeruser = new RegisterDto();
             return View(registeruser);
         }
-
+        [AllowAnonymous]
         [HttpPost]
-        public IActionResult Register(LoginDto input)
+        public IActionResult Register(RegisterDto input)
         {
             if (ModelState.IsValid)
             {
-                var user = mapper.Map<LoginDto,Kullanici>(input);
+                var user = mapper.Map<Kullanici>(input);
                 user.Role = "User";
 
                 
