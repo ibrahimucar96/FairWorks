@@ -19,14 +19,14 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/FirmaTipveTemsilEdilenFirmas
+       
         public async Task<IActionResult> Index()
         {
             var fairWorksDbContext = _context.FirmaTipiveFirmalar.Include(f => f.FirmaTipi).Include(f => f.TemsilEttigiFirma);
             return View(await fairWorksDbContext.ToListAsync());
         }
 
-        // GET: Admin/FirmaTipveTemsilEdilenFirmas/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,7 +46,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(firmaTipveTemsilEdilenFirma);
         }
 
-        // GET: Admin/FirmaTipveTemsilEdilenFirmas/Create
+        
         public IActionResult Create()
         {
             ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTipId");
@@ -54,9 +54,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/FirmaTipveTemsilEdilenFirmas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+  
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TemsilEttigiFirmaId,FirmaTipId")] FirmaTipveTemsilEdilenFirma firmaTipveTemsilEdilenFirma)
@@ -72,7 +70,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(firmaTipveTemsilEdilenFirma);
         }
 
-        // GET: Admin/FirmaTipveTemsilEdilenFirmas/Edit/5
+      
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,9 +88,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(firmaTipveTemsilEdilenFirma);
         }
 
-        // POST: Admin/FirmaTipveTemsilEdilenFirmas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("TemsilEttigiFirmaId,FirmaTipId")] FirmaTipveTemsilEdilenFirma firmaTipveTemsilEdilenFirma)
@@ -127,7 +123,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(firmaTipveTemsilEdilenFirma);
         }
 
-        // GET: Admin/FirmaTipveTemsilEdilenFirmas/Delete/5
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,7 +143,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             return View(firmaTipveTemsilEdilenFirma);
         }
 
-        // POST: Admin/FirmaTipveTemsilEdilenFirmas/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
