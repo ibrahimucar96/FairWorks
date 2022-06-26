@@ -92,8 +92,8 @@ namespace FairWorks.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = mapper.Map<Kullanici>(input);
-                user.Role = "user";
+                var user = mapper.Map<LoginDto,Kullanici>(input);
+                user.Role = "User";
 
                 
                 manager.Add(user);
