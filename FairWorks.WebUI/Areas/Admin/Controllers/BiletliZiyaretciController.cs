@@ -26,7 +26,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var biletliZiyaretci = manager.GetAll(null);
-            //ViewBag.Urunler = new List<Urunler> { new Urunler { Id = 2, UrunAdi = "ReklamPanosu", Adet = 1, Fiyat = 100, UrunKodu = 321, UrunBilgileri = "TürkYapimi" } };
+            
             return View(biletliZiyaretci);
         }
         [HttpGet]

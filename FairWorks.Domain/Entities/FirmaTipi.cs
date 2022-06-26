@@ -11,14 +11,12 @@ namespace FairWorks.Domain.Entities
     {
         [Key]
         public int FirmaTipId { get; set; }
-       
+
         public string FirmaTip { get; set; }
 
 
         public ICollection<KatalogGirisForm> KatalogGirisForms { get; set; }
         public ICollection<FirmaTipveTemsilEdilenFirma> TemsilEttigiFirmalar { get; set; }
-
-
 
     }
 }

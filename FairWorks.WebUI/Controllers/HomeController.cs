@@ -1,4 +1,5 @@
 ﻿using FairWorks.WebUI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -20,7 +21,7 @@ namespace FairWorks.WebUI.Controllers
             {
                 _logger = logger;
             }
-
+            [AllowAnonymous]
             public IActionResult Index()
             {
                 return View();

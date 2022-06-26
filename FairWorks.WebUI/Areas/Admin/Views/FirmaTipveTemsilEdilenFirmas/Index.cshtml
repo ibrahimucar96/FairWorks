@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FairWorks.Domain.Entities.FirmaTipveTemsilEdilenFirma>
+
+<p>
+    <a class="btn btn-success" asp-controller="FirmaTipveTemsilEdilenFirmas" asp-action="Create">Yeni</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TemsilEttigiFirma.TemsilEttigiFirmaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TemsilEttigiFirma.TemsilEdilenFirma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirmaTipi.FirmaTipId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirmaTipi.FirmaTip)
+            </th>
+            <th>Islemler</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemsilEttigiFirma.TemsilEttigiFirmaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemsilEttigiFirma.TemsilEdilenFirma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmaTipi.FirmaTipId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmaTipi.FirmaTip)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TemsilEttigiFirma.TemsilEttigiFirmaId @item.FirmaTipi.FirmaTipId"class="btn btn-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TemsilEttigiFirma.TemsilEttigiFirmaId @item.FirmaTipi.FirmaTipId"class="btn btn-primary">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TemsilEttigiFirma.TemsilEttigiFirmaId @item.FirmaTipi.FirmaTipId"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

@@ -1,0 +1,16 @@
+﻿    <nav>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index" title="">Anasayfa</a></li>
+                        </ul>
+                    </nav>
+                    <div class="rt-subs">
+                        @if (string.IsNullOrEmpty(User.Identity.Name))
+                        {
+                            <a class="subscribe-btn" asp-controller="Kullanici" asp-action="Login" title=""> Giriş Yap</a>
+                        }
+                        else
+                        {
+                            <a class="subscribe-btn" asp-controller="Home" asp-action="Index" asp-area="Admin" title=""> Yönetici</a>
+                            <a class="subscribe-btn" asp-controller="Kullanici" asp-action="Logout" title=""> Çıkış Yap</a>
+                        }
+                    </div>

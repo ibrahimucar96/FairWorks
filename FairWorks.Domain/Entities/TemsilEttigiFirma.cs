@@ -19,6 +19,5 @@ namespace FairWorks.Domain.Entities
 
         public ICollection<KatalogGirisForm> KatalogGirisForms { get; set; }
         public ICollection<FirmaTipveTemsilEdilenFirma> FirmaTipi { get; set; }
-
     }
 }

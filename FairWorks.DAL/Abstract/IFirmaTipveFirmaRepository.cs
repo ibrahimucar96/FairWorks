@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FairWorks.DAL.Abstract
 {
-    public interface IFirmaTipveFirmaRepository:IFairWorksDbRepository<FirmaTipveTemsilEdilenFirma>
+    public interface IFirmaTipveFirmaRepository: IFairWorksDbRepository<FirmaTipveTemsilEdilenFirma>
     {
     }
 }

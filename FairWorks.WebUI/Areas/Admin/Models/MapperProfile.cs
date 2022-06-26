@@ -25,6 +25,8 @@ namespace FairWorks.WebUI.Areas.Admin.Models
             CreateMap<GorusulenFirma, GorusulenFirmaCreateDto>();
             CreateMap<IlaveStandMalzemeler, IlaveStandMalzemelerCreateDto>();
             CreateMap<IlaveStandMalzemelerCreateDto, IlaveStandMalzemeler>();
+            CreateMap<Kullanici,LoginCreateDto>();
+            CreateMap<LoginCreateDto, Kullanici>();
         }
     }
 }

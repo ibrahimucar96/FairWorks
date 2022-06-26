@@ -56,6 +56,7 @@ namespace FairWorks.Domain.Entities
             modelBuilder.Entity<FirmaTipveTemsilEdilenFirma>().HasOne(x => x.FirmaTipi).WithMany(x => x.TemsilEttigiFirmalar).HasForeignKey(x => x.TemsilEttigiFirmaId);
             modelBuilder.Entity<FirmaTipveTemsilEdilenFirma>().HasOne(x => x.TemsilEttigiFirma).WithMany(x => x.FirmaTipi).HasForeignKey(x => x.FirmaTipId);
             #endregion
+
             #region Kullanici
             modelBuilder.Entity<Kullanici>()
                 .Property(x => x.UserName)

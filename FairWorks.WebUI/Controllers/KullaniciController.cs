@@ -26,12 +26,13 @@ namespace FairWorks.WebUI.Controllers
             this.db = db;
             this.mapper = mapper;
         }
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var kullanicilar = manager.GetAll(null);
             return View(kullanicilar);
         }
-
+        [AllowAnonymous]
         public IActionResult Giris()
         {
             LoginDto loginDto = new LoginDto();
@@ -39,7 +40,7 @@ namespace FairWorks.WebUI.Controllers
 
             return View(loginDto);
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Giris(LoginDto dto)
         {
@@ -74,10 +75,11 @@ namespace FairWorks.WebUI.Controllers
         {
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
-            return RedirectToAction("Index", "Home", new { area = "" });
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

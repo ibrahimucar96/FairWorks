@@ -1,0 +1,47 @@
+﻿@model FairWorks.Domain.Entities.FirmaTipveTemsilEdilenFirma
+
+
+
+<form method="post" asp-controller="FirmaTipveTemsilEdilenFirmas" asp-action="Delete">
+   
+    <div class="form-group row">
+        <label asp-for="TemsilEttigiFirma.TemsilEdilenFirma" class="col-md-2 col-form-label">@Model.TemsilEttigiFirma.TemsilEdilenFirma</label>        
+    </div>
+    <div class="form-group row">
+        <label asp-for="FirmaTipi.FirmaTip" class="col-md-2 col-form-label">@Model.FirmaTipi.FirmaTip</label>        
+    </div>        
+        
+    <p>Bu kaydi Silmek istediginizden eminmisiniz ?</p>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Sil</button>
+        <a  class="btn btn-secondary" asp-action="Index" asp-controller="FirmaTipveTemsilEdilenFirmas">Listeye Geri Dön</a>
+    </div>
+</form>
+
+
+
+@*
+<table class="table table-bordered">
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.TemsilEttigiFirma)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.TemsilEttigiFirma.TemsilEttigiFirmaId)
+        </dd class>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.FirmaTipi)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.FirmaTipi.FirmaTipId)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TemsilEttigiFirmaId" />
+        <input type="hidden" asp-for="FirmaTipId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Listeye Dön</a>
+    </form>
+</table>
+*@
