@@ -1,4 +1,6 @@
-﻿using FairWorks.BLManager.Abstract;
+﻿using AutoMapper;
+using FairWorks.BLManager.Abstract;
+using FairWorks.Domain.Entities;
 using FairWorks.WebUI.Models.Dto;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -15,10 +17,14 @@ namespace FairWorks.WebUI.Controllers
     public class KullaniciController : Controller
     {
         private readonly IKullaniciManager manager;
+        private readonly FairWorksDbContext db;
+        private readonly IMapper mapper;
 
-        public KullaniciController(IKullaniciManager manager)
+        public KullaniciController(IKullaniciManager manager,FairWorksDbContext db,IMapper mapper)
         {
             this.manager = manager;
+            this.db = db;
+            this.mapper = mapper;
         }
         public IActionResult Index()
         {
@@ -68,5 +74,35 @@ namespace FairWorks.WebUI.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home", new { area = "" });
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            var registeruser = new LoginDto();
+            return View(registeruser);
+        }
+
+        [HttpPost]
+        public IActionResult Register(LoginDto input)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = mapper.Map<Kullanici>(input);
+                user.Role = "user";
+
+                
+                manager.Add(user);
+                return RedirectToAction("Index", "Home");
+
+            }
+
+            return View();
+        }
+
     }
 }
