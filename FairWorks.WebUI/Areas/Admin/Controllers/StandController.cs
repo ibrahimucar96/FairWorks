@@ -50,7 +50,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         
         public IActionResult Create()
         {
-            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "Id");
+            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "Id", stand.SalonId);
+            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo", stand.Salonlar);
             return View(stand);
         }
 
@@ -82,7 +82,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "Id", stand.SalonId);
+            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo", stand.Salonlar);
             return View(stand);
         }
 
@@ -116,7 +116,7 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "Id", stand.SalonId);
+            ViewData["SalonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo", stand.Salonlar);
             return View(stand);
         }
 
