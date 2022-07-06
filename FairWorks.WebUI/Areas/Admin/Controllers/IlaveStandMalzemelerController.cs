@@ -6,7 +6,9 @@ using FairWorks.WebUI.Areas.Admin.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FairWorks.WebUI.Areas.Admin.Controllers
 {
@@ -17,24 +19,20 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         private readonly IIlaveStandMalzemeleriManager manager;
         private readonly IMapper mapper;
         private readonly ITedarikciManager tedarikci;
+        private readonly FairWorksDbContext context;
 
-        public IlaveStandMalzemelerController(IIlaveStandMalzemeleriManager manager,IMapper mapper,ITedarikciManager tedarikci)
+        public IlaveStandMalzemelerController(IIlaveStandMalzemeleriManager manager,IMapper mapper,ITedarikciManager tedarikci,FairWorksDbContext context)
         {
             this.manager = manager;
             this.mapper = mapper;
             this.tedarikci = tedarikci;
+            this.context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<IlaveStandMalzemeler> malzeme = new List<IlaveStandMalzemeler>();
-            malzeme = manager.GetAll(null);
+            var fairWorksDbContext = context.İlaveStandMalzemeleri.Include(t => t.Tedarikciler);
+            return View(await fairWorksDbContext.ToListAsync());
 
-
-            if (malzeme.Count == 0)
-                malzeme.Add(new IlaveStandMalzemeler());
-
-            return View(malzeme);
-            
         }
         [HttpGet]
         public IActionResult Create()

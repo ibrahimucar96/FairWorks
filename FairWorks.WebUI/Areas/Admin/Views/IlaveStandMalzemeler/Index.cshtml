@@ -17,7 +17,8 @@
             <td>@Html.DisplayNameFor(model=>model.ElektrikKw)</td>
             <td>@Html.DisplayNameFor(model=>model.Fiyat)</td>
             <td>@Html.DisplayNameFor(model=>model.Ozellik)</td>
-            <td>@Html.DisplayNameFor(model=>model.TedarikciId)</td> 
+            <td>@Html.DisplayNameFor(model=>model.TedarikciId)</td>
+            <td>@Html.DisplayNameFor(model=>model.Tedarikciler.Tedarikciler)</td> 
             <td>Islem</td>
 
         </tr>
@@ -26,14 +27,33 @@
         @foreach(var item in Model)
         {
             <tr>
-                <td>@item.Id</td>
-                <td>@item.IlaveStandMalzemesi</td>
-                <td>@item.MalzemeKodu</td>
-                <td>@item.MalzemeAdı</td>
-                <td>@item.ElektrikKw</td>
-                <td>@item.Fiyat</td>
-                <td>@item.Ozellik</td>
-                <td>@item.TedarikciId</td>  
+                <td>
+                @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.IlaveStandMalzemesi)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.MalzemeKodu)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.MalzemeAdı)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.ElektrikKw)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Ozellik)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.TedarikciId)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Tedarikciler.Tedarikciler)
+                </td>
                 <td><a asp-controller="IlaveStandMalzemeler" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
                 <a asp-controller="IlaveStandMalzemeler" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
             </tr>
