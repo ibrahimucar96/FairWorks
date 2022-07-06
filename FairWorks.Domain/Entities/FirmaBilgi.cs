@@ -6,6 +6,7 @@ namespace FairWorks.Domain.Entities
     public class FirmaBilgi
     {
         public int Id { get; set; }
+        public string FirmaAd { get; set; }
         public string Adres { get; set; }
         public string Telefon { get; set; }
         public string VergiDairesi { get; set; }

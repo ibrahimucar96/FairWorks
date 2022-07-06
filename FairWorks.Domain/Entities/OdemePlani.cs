@@ -8,9 +8,7 @@ namespace FairWorks.Domain.Entities
 {
     public class OdemePlani
     {
-        public int Id { get; set; }
-
-       
+        public int Id { get; set; }      
         public decimal VadeSayisi { get; set; }
         public int Taksit { get; set; }
         public decimal Faiz { get; set; }

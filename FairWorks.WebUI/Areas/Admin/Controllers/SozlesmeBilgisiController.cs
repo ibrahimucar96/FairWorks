@@ -55,12 +55,12 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         
         public IActionResult Create()
         {
-            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "Id");
+            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "FirmaAd");
             ViewData["OdemePlaniId"] = new SelectList(_context.OdemePlanlari, "Id", "Id");
-            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Id");
-            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "Id");
-            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "Id");
-            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "Id");
+            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Ad");
+            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo");
+            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "SozlesmeTipleri");
+            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "StandKodu");
             return View();
         }
 
@@ -75,12 +75,12 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "Id", sozlesmeBilgisi.FirmaBilgileriId);
+            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "FirmaAd", sozlesmeBilgisi.FirmaBilgileri);
             ViewData["OdemePlaniId"] = new SelectList(_context.OdemePlanlari, "Id", "Id", sozlesmeBilgisi.OdemePlaniId);
-            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Id", sozlesmeBilgisi.PersonelId);
-            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "Id", sozlesmeBilgisi.salonId);
-            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "Id", sozlesmeBilgisi.SozlesmeTipiId);
-            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "Id", sozlesmeBilgisi.StandId);
+            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Ad", sozlesmeBilgisi.PersonelAdi);
+            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo", sozlesmeBilgisi.Salon);
+            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "SozlesmeTipleri", sozlesmeBilgisi.SozlesmeTipleri);
+            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "StandKodu", sozlesmeBilgisi.Stand);
             return View(sozlesmeBilgisi);
         }
 
@@ -97,12 +97,12 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "Id", sozlesmeBilgisi.FirmaBilgileriId);
+            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "FirmaAd", sozlesmeBilgisi.FirmaBilgileri);
             ViewData["OdemePlaniId"] = new SelectList(_context.OdemePlanlari, "Id", "Id", sozlesmeBilgisi.OdemePlaniId);
-            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Id", sozlesmeBilgisi.PersonelId);
-            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "Id", sozlesmeBilgisi.salonId);
-            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "Id", sozlesmeBilgisi.SozlesmeTipiId);
-            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "Id", sozlesmeBilgisi.StandId);
+            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Ad", sozlesmeBilgisi.PersonelAdi);
+            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo", sozlesmeBilgisi.Salon);
+            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "SozlesmeTipleri", sozlesmeBilgisi.SozlesmeTipleri);
+            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "StandKodu", sozlesmeBilgisi.Stand);
             return View(sozlesmeBilgisi);
         }
 
@@ -136,12 +136,12 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "Id", sozlesmeBilgisi.FirmaBilgileriId);
+            ViewData["FirmaBilgileriId"] = new SelectList(_context.FirmaBilgileri, "Id", "FirmaAd", sozlesmeBilgisi.FirmaBilgileri);
             ViewData["OdemePlaniId"] = new SelectList(_context.OdemePlanlari, "Id", "Id", sozlesmeBilgisi.OdemePlaniId);
-            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Id", sozlesmeBilgisi.PersonelId);
-            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "Id", sozlesmeBilgisi.salonId);
-            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "Id", sozlesmeBilgisi.SozlesmeTipiId);
-            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "Id", sozlesmeBilgisi.StandId);
+            ViewData["PersonelId"] = new SelectList(_context.Personeller, "Id", "Ad", sozlesmeBilgisi.PersonelAdi);
+            ViewData["salonId"] = new SelectList(_context.Salonlar, "Id", "SalonNo", sozlesmeBilgisi.Salon);
+            ViewData["SozlesmeTipiId"] = new SelectList(_context.SozlesmeTipleri, "Id", "SozlesmeTipleri", sozlesmeBilgisi.SozlesmeTipleri);
+            ViewData["StandId"] = new SelectList(_context.Standlar, "Id", "StandKodu", sozlesmeBilgisi.Stand);
             return View(sozlesmeBilgisi);
         }
 
