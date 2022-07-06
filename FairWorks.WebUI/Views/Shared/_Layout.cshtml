@@ -29,26 +29,19 @@
                         </li> 
                          
                     </ul>
-                    <a class="nav-link text-dark"  asp-controller="Kullanici" asp-action="Register">Kayit Ol</a>
-                            @*<a class="btn btn-success" asp-area="" asp-controller="Kullanici" asp-action="Giris">Giris</a> | *@ 
-                          
+                    
                            
-                          
-                             @*<div class="rt-subs">*@
                         @if (string.IsNullOrEmpty(User.Identity.Name))
                         {
                             <a class="btn btn-success" asp-controller="Kullanici" asp-action="Giris" title=""> Giriş Yap</a>
+                            <a class="nav-link text-dark"  asp-controller="Kullanici" asp-action="Register">Kayit Ol</a>
                         }
                         else
                         {
                             
                             <a class="btn btn-success" asp-controller="Kullanici" asp-action="Logout" title=""> Çıkış Yap</a>
                         }
-                    @*</div>*@
-                      @* if (user.Role == "Admin")
-                            return RedirectToAction("Index", "Home", new { area = "Admin" });
-                      else
-                            return RedirectToAction("Index", "Home");*@
+                   
                                                       
                 </div>
             </div>

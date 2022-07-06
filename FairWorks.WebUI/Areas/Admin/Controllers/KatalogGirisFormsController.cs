@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FairWorks.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using FairWorks.BLManager.Abstract;
+using FairWorks.WebUI.Areas.Admin.Models;
 
 namespace FairWorks.WebUI.Areas.Admin.Controllers
 {
@@ -15,10 +17,12 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
     public class KatalogGirisFormsController : Controller
     {
         private readonly FairWorksDbContext _context;
+        
 
         public KatalogGirisFormsController(FairWorksDbContext context)
         {
             _context = context;
+            
         }
 
         
@@ -52,9 +56,9 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         
         public IActionResult Create()
         {
-            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTipId");
-            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEttigiFirmaId");
-            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "Id");
+            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTip");
+            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEdilenFirma");
+            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "UrunAdi");
             return View();
         }
 
@@ -69,9 +73,9 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTipId", katalogGirisForm.FirmaTipId);
-            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEttigiFirmaId", katalogGirisForm.TemsilEttigiFirmaId);
-            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "Id", katalogGirisForm.UrunId);
+            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTip", katalogGirisForm.FirmaTip);
+            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEdilenFirma", katalogGirisForm.TemsilEttigiFirma);
+            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "UrunAdi", katalogGirisForm.UrunGrupları);
             return View(katalogGirisForm);
         }
 
@@ -88,9 +92,9 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTipId", katalogGirisForm.FirmaTipId);
-            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEttigiFirmaId", katalogGirisForm.TemsilEttigiFirmaId);
-            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "Id", katalogGirisForm.UrunId);
+            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTip", katalogGirisForm.FirmaTip);
+            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEdilenFirma", katalogGirisForm.TemsilEttigiFirma);
+            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "UrunAdi", katalogGirisForm.UrunGrupları);
             return View(katalogGirisForm);
         }
 
@@ -124,9 +128,9 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTipId", katalogGirisForm.FirmaTipId);
-            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEttigiFirmaId", katalogGirisForm.TemsilEttigiFirmaId);
-            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "Id", katalogGirisForm.UrunId);
+            ViewData["FirmaTipId"] = new SelectList(_context.FirmaTipleri, "FirmaTipId", "FirmaTip", katalogGirisForm.FirmaTip);
+            ViewData["TemsilEttigiFirmaId"] = new SelectList(_context.TemsilEttigiFirmalar, "TemsilEttigiFirmaId", "TemsilEdilenFirma", katalogGirisForm.TemsilEttigiFirma);
+            ViewData["UrunId"] = new SelectList(_context.Urunler, "Id", "UrunAdi", katalogGirisForm.UrunGrupları);
             return View(katalogGirisForm);
         }
 
