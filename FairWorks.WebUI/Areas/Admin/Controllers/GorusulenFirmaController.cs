@@ -6,7 +6,9 @@ using FairWorks.WebUI.Areas.Admin.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FairWorks.WebUI.Areas.Admin.Controllers
 {
@@ -17,23 +19,20 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         private readonly IGorusulenFirmaManager manager;
         private readonly IMapper mapper;
         private readonly IPersonelManager personel;
+        private readonly FairWorksDbContext context;
 
-        public GorusulenFirmaController(IGorusulenFirmaManager manager, IMapper mapper, IPersonelManager personel)
+        public GorusulenFirmaController(IGorusulenFirmaManager manager, IMapper mapper, IPersonelManager personel,FairWorksDbContext context)
         {
             this.manager = manager;
             this.mapper = mapper;
             this.personel = personel;
+            this.context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<GorusulenFirma> gorusulenFirma = new List<GorusulenFirma>();
-            gorusulenFirma = manager.GetAll(null);
-
-
-            if (gorusulenFirma.Count == 0)
-                gorusulenFirma.Add(new GorusulenFirma());
-
-            return View(gorusulenFirma);
+            var fairWorksDbContext = context.GorusulenFirmalar.Include(p => p.PersonelAdı);
+            return View(await fairWorksDbContext.ToListAsync());
+            
         }
         [HttpGet]
         public IActionResult Create()

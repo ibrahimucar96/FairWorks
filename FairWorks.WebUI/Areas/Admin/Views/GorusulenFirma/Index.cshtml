@@ -21,6 +21,7 @@
             <td>@Html.DisplayNameFor(model=>model.FirmaninIlgilendigiSalon)</td>
             <td>@Html.DisplayNameFor(model=>model.GorusmeNotlari)</td>
             <td>@Html.DisplayNameFor(model=>model.PersonelId)</td>
+            <td>@Html.DisplayNameFor(model=>model.PersonelAdı.Ad)</td>
             
             <td>Islem</td>
 
@@ -30,18 +31,47 @@
         @foreach(var item in Model)
         {
             <tr>
-                <td>@item.Id</td>
-                <td>@item.GorusmeTarihi</td>
-                <td>@item.GorusulenKisi</td>
-                <td>@item.Unvanı</td>
-                <td>@item.Telefon</td>
-                <td>@item.Eposta</td>
-                <td>@item.FirmanınCalıstıgıSektoru</td>
-                <td>@item.FirmaninProfili</td> 
-                <td>@item.FirmaninIlgilendigiFuar</td> 
-                <td>@item.FirmaninIlgilendigiSalon</td> 
-                <td>@item.GorusmeNotlari</td>                
-                <td>@item.PersonelId</td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.GorusmeTarihi)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.GorusulenKisi)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.Unvanı)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.Eposta)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.FirmanınCalıstıgıSektoru)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.FirmaninProfili)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.FirmaninIlgilendigiFuar)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.FirmaninIlgilendigiSalon)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.GorusmeNotlari)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.PersonelId)
+                </td>
+                 <td>
+                @Html.DisplayFor(modelItem => item.PersonelAdı.Ad)
+                </td>
+                 
+                
                 
                 
                 <td><a asp-controller="GorusulenFirma" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
