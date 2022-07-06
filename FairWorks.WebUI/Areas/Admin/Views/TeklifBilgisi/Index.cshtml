@@ -17,10 +17,16 @@
                 @Html.DisplayNameFor(model => model.m2birimFiyatı)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Stand)
+                @Html.DisplayNameFor(model => model.StandId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Doviz)
+                @Html.DisplayNameFor(model => model.Stand.StandTipi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DovizId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doviz.DovizCinsi)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.OdemePlani)
@@ -29,7 +35,10 @@
                 @Html.DisplayNameFor(model => model.TeklifinSonGecerlilikTarihi)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Salon)
+                @Html.DisplayNameFor(model => model.salonId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salon.SalonNo)
             </th>
             <th>Islem</th>
         </tr>
@@ -50,7 +59,13 @@
                 @Html.DisplayFor(modelItem => item.Stand.Id)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Stand.StandTipi)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Doviz.Id)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Doviz.DovizCinsi)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OdemePlani.Id)
@@ -60,6 +75,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Salon.Id)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Salon.SalonNo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id"class="btn btn-primary">Edit</a> |
