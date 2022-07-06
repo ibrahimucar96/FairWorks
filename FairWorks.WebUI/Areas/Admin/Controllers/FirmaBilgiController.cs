@@ -8,9 +8,11 @@ using FairWorks.WebUI.Areas.Admin.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FairWorks.WebUI.Areas.Admin.Controllers
 {
@@ -21,23 +23,19 @@ namespace FairWorks.WebUI.Areas.Admin.Controllers
         private readonly IFirmaBilgiManager manager;
         private readonly IMapper mapper;
         private readonly IUcretsizVerilenAlanManager ucretsizVerilenAlan;
+        private readonly FairWorksDbContext context;
 
-        public FirmaBilgiController(IFirmaBilgiManager manager,IMapper mapper,IUcretsizVerilenAlanManager ucretsizVerilenAlan)
+        public FirmaBilgiController(IFirmaBilgiManager manager,IMapper mapper,IUcretsizVerilenAlanManager ucretsizVerilenAlan,FairWorksDbContext context)
         {
             this.manager = manager;
             this.mapper = mapper;
             this.ucretsizVerilenAlan = ucretsizVerilenAlan;
+            this.context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<FirmaBilgi> firmaBilgi = new List<FirmaBilgi>();
-            firmaBilgi = manager.GetAll(null);
-            
-
-            if (firmaBilgi.Count == 0)
-                firmaBilgi.Add(new FirmaBilgi());
-
-            return View(firmaBilgi);                           
+            var fairWorksDbContext = context.FirmaBilgileri.Include(u => u.UcretsizVerilenAlanlar);
+            return View(await fairWorksDbContext.ToListAsync());
         }
         [HttpGet]
         public IActionResult Create()
